@@ -1,2 +1,2 @@
 # AMONIC-Airlines
-Course project DS
+Курсовой проект
