@@ -14,61 +14,128 @@ namespace AMONIC_Airlines
 {
     public partial class Administrator : Form
     {
-        public Administrator(string email)
+        public Administrator()
         {
             InitializeComponent();
         }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) //complete
         {
             Close();
         }
-
-        private void Administrator_Load(object sender, EventArgs e)
-        {
-            this.rolesTableAdapter.Fill(this.session1_xxDataSet1.roles);
-            this.officesTableAdapter.Fill(this.session1_xxDataSet1.offices);
-            this.usersTableAdapter.Fill(this.session1_xxDataSet1.users);
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.Cells[3].Value.ToString() == "1")
-                {
-                    row.DefaultCellStyle.BackColor = Color.LightGreen;
-                }
-                if (row.Cells[6].Value.ToString() == "False")
-                {
-                    row.DefaultCellStyle.BackColor = Color.Red;
-                }
-            }
-        }
-
-        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Add_usercs add = new Add_usercs();
-            add.Owner = this;
-            add.Show();
-            usersTableAdapter.Update(session1_xxDataSet1.users);
-            dataGridView1.Refresh();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void UpdateTable() //complete
         {
             string connStr = "server=localhost;user=root;database=session1_xx;" +
                 "password=As89149625780@;";
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
-            string off = comboBox1.Text;
-            string sql = "SELECT FirstName, LastName, Birthdate, RoleID, " +
-                "Email, OfficeID, Active FROM users JOIN offices on (offices.ID = OfficeID) " +
-                "join roles on (roles.ID = RoleID) WHERE offices.Title = '" + off + "'";
+            string off = officeBox.Text;
+            if (off == "All offices")
+            {
+                string sql = "SELECT FirstName as `First Name`, LastName as `Last Name`, Birthdate as `Date`, " +
+                    "roles.Title as `User Role`, " +
+                    "Email as `Email address`, offices.Title as `Office`, Active FROM users JOIN offices on " +
+                    "(offices.ID = OfficeID) " +
+                    "join roles on (roles.ID = RoleID)";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connStr);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                conn.Close();
+                dataGridView1.DataSource = dt;
+                int ageColumn_Index = dataGridView1.Columns[2].DisplayIndex;
+                DataColumn age = dt.Columns.Add("Age", typeof(int));
+                int dateColumn_Index = dataGridView1.Columns[7].DisplayIndex;
+                dataGridView1.Columns[2].DisplayIndex = dateColumn_Index;
+                dataGridView1.Columns[7].DisplayIndex = ageColumn_Index;
+                dataGridView1.Columns[7].Width = 70;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    string dates = row.Cells[2].Value.ToString();
+                    string[] datesp = dates.Split(' ');
+                    var date = DateTime.ParseExact(datesp[0], "dd.MM.yyyy", CultureInfo.InvariantCulture);
+                    var ages = DateTime.Now.Year - date.Year;
+                    if (DateTime.Now.Month < date.Month ||
+                        (DateTime.Now.Month == date.Month && DateTime.Now.Day < date.Day)) ages--;
+                    row.Cells[7].Value = ages.ToString();
+                }
+                PaintRow();
+            }
+            else
+            {
+                string sql = "SELECT FirstName as `First Name`, LastName as `Last Name`, Birthdate as `Date`, " +
+                    "roles.Title as `User Role`, " +
+                    "Email as `Email address`, offices.Title as `Office`, Active FROM users JOIN offices on (offices.ID = OfficeID) " +
+                    "join roles on (roles.ID = RoleID) WHERE offices.Title = '" + off + "'";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connStr);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                conn.Close();
+                dataGridView1.DataSource = dt;
+                int ageColumn_Index = dataGridView1.Columns[2].DisplayIndex;
+                DataColumn age = dt.Columns.Add("Age", typeof(int));
+                int dateColumn_Index = dataGridView1.Columns[7].DisplayIndex;
+                dataGridView1.Columns[2].DisplayIndex = dateColumn_Index;
+                dataGridView1.Columns[7].DisplayIndex = ageColumn_Index;
+                dataGridView1.Columns[7].Width = 70;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    string dates = row.Cells[2].Value.ToString();
+                    string[] datesp = dates.Split(' ');
+                    var date = DateTime.ParseExact(datesp[0], "dd.MM.yyyy", CultureInfo.InvariantCulture);
+                    var ages = DateTime.Now.Year - date.Year;
+                    if (DateTime.Now.Month < date.Month ||
+                        (DateTime.Now.Month == date.Month && DateTime.Now.Day < date.Day)) ages--;
+                    row.Cells[7].Value = ages.ToString();
+                }
+                PaintRow();
+            }
+        }
+        private void Administrator_Load(object sender, EventArgs e) //complete
+        {
+            officeBox.SelectedIndex = 0;
+            string connStr = "server=localhost;user=root;database=session1_xx;" +
+                "password=As89149625780@;";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            conn.Open();
+            string sql = "SELECT FirstName as `First Name`, LastName as `Last Name`, Birthdate as `Date`, " +
+                "roles.Title as `User Role`, " +
+                    "Email as `Email address`, offices.Title as `Office`, Active FROM users JOIN offices on " +
+                    "(offices.ID = OfficeID) " +
+                    "join roles on (roles.ID = RoleID)";
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connStr);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             conn.Close();
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[6].Visible = false;
+            int ageColumn_Index = dataGridView1.Columns[2].DisplayIndex;
+            DataColumn age = dt.Columns.Add("Age", typeof(int));
+            int dateColumn_Index = dataGridView1.Columns[7].DisplayIndex;
+            dataGridView1.Columns[2].DisplayIndex = dateColumn_Index;
+            dataGridView1.Columns[7].DisplayIndex = ageColumn_Index;
+            dataGridView1.Columns[2].Visible = false;
+            dataGridView1.Columns[0].Width = 94;
+            dataGridView1.Columns[1].Width = 94;
+            dataGridView1.Columns[7].Width = 70;
+            dataGridView1.Columns[3].Width = 100;
+            dataGridView1.Columns[4].Width = 169;
+            dataGridView1.Columns[5].Width = 120;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells[3].Value.ToString() == "1")
+                string dates = row.Cells[2].Value.ToString();
+                string[] datesp = dates.Split(' ');
+                var date = DateTime.ParseExact(datesp[0], "dd.MM.yyyy", CultureInfo.InvariantCulture);
+                var ages = DateTime.Now.Year - date.Year;
+                if (DateTime.Now.Month < date.Month ||
+                    (DateTime.Now.Month == date.Month && DateTime.Now.Day < date.Day)) ages--;
+                row.Cells[7].Value = ages.ToString();
+            }
+            PaintRow();
+        }
+        private void PaintRow() //complete
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[3].Value.ToString() == "Administrator")
                 {
                     row.DefaultCellStyle.BackColor = Color.LightGreen;
                 }
@@ -78,64 +145,52 @@ namespace AMONIC_Airlines
                 }
             }
         }
-
-        private void changerole_Click(object sender, EventArgs e)
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e) //complete
+        {
+            Add_usercs add = new Add_usercs();
+            add.ShowDialog();
+            UpdateTable();
+        }
+        private void officeBox_SelectedIndexChanged(object sender, EventArgs e) //complete
+        {
+            UpdateTable();
+        }
+        private void changerole_Click(object sender, EventArgs e) //complete
         {
             Edit_Role edit = new Edit_Role();
-            edit.Owner = this;
-            edit.Show();
-            usersTableAdapter.Update(session1_xxDataSet1.users);
-            dataGridView1.Refresh();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.Cells[3].Value.ToString() == "1")
-                {
-                    row.DefaultCellStyle.BackColor = Color.LightGreen;
-                }
-                if (row.Cells[6].Value.ToString() == "False")
-                {
-                    row.DefaultCellStyle.BackColor = Color.Red;
-                }
-            }
+            edit.ShowDialog();
+            UpdateTable();
         }
-
-        private void enabledisable_Click(object sender, EventArgs e)
+        private void enabledisable_Click(object sender, EventArgs e) //complete
         {
-            string mail = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             string connStr = "server=localhost;user=root;database=session1_xx;" +
                 "password=As89149625780@;";
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
-            string sql = "SELECT ID FROM users WHERE Email = '" + mail + "'";
+            string sql = "SELECT ID, Active FROM users WHERE Email = '" + dataGridView1.CurrentRow.Cells[4].Value.ToString() + "'";
             MySqlCommand command = new MySqlCommand(sql, conn);
             MySqlDataReader reader = command.ExecuteReader();
             reader.Read();
             string id = reader[0].ToString();
-            conn.Close();
-            conn.Open();
-            string sqls = "SELECT Active FROM users WHERE Email = '" + mail + "'";
-            MySqlCommand commander = new MySqlCommand(sqls, conn);
-            MySqlDataReader readers = commander.ExecuteReader();
-            readers.Read();
-            string active = readers[0].ToString();
-            conn.Close();
-            conn.Open();
-            if (active == "true")
+            string active = reader[1].ToString();
+            reader.Close();
+            if (active == "True")
             {
-                string query = "UPDATE users SET Active = 0 WHERE ID = '" + id +
-                    "' AND Email = '" + mail + "'";
+                string query = "UPDATE users SET Active = 0 WHERE ID = " + id +
+                    " AND Email = '" + dataGridView1.CurrentRow.Cells[4].Value.ToString() + "'";
                 MySqlCommand commands = new MySqlCommand(query, conn);
                 commands.ExecuteNonQuery();
                 conn.Close();
             }
-            else if (active == "false")
+            else if (active == "False")
             {
-                string query = "UPDATE users SET Active = 1 WHERE ID = '" + id +
-                    "' AND Email = '" + mail + "'";
+                string query = "UPDATE users SET Active = 1 WHERE ID = " + id +
+                    " AND Email = '" + dataGridView1.CurrentRow.Cells[4].Value.ToString() + "'";
                 MySqlCommand commands = new MySqlCommand(query, conn);
                 commands.ExecuteNonQuery();
                 conn.Close();
             }
+            UpdateTable();
         }
     }
 }

@@ -23,12 +23,27 @@ namespace AMONIC_Airlines
         {
             InitializeComponent();
         }
-        public void admin()
+        public void admin() //complete
         {
-            Application.Run(new Administrator(email));
+            string connection_to_server = "server=localhost;user=root;" +
+               "database=session1_xx;password=As89149625780@;";
+            MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
+            connection_to_datebase.Open();
+            string query = "INSERT INTO trecking (Email, Enter_date, Enter_time) VALUES ('" + email
+                + "', UTC_DATE(), UTC_TIME())";
+            MySqlCommand command = new MySqlCommand(query, connection_to_datebase);
+            command.ExecuteNonQuery();
+            connection_to_datebase.Close();
+            Application.Run(new Administrator());
         }
         public void user()
         {
+            string connection_to_server = "server=localhost;user=root;" +
+                "database=session1_xx;password=As89149625780@;";
+            MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
+            connection_to_datebase.Open();
+            string query = "INSERT INTO trecking (Email, Enter_date, Enter_time) VALUES ('" + email
+                + "', UTC_DATE(), UTC_TIME())";
             Application.Run(new User(email));
         }
         private void loginbutton_Click(object sender, EventArgs e)
@@ -45,7 +60,7 @@ namespace AMONIC_Airlines
             {
                 if (reader[2].ToString() == "1" && reader[3].ToString() != "False")
                 {
-                    email = reader[2].ToString();
+                    email = reader[0].ToString();
                     pass = true;
                     this.Close();
                     log = new Thread(admin);
@@ -54,7 +69,7 @@ namespace AMONIC_Airlines
                 }
                 else if (reader[2].ToString() == "2" && reader[3].ToString() != "False")
                 {
-                    email = reader[2].ToString();
+                    email = reader[0].ToString();
                     pass = true;
                     this.Close();
                     log = new Thread(user);
@@ -82,12 +97,12 @@ namespace AMONIC_Airlines
             }
             connection_to_datebase.Close();
         }
-        private void exitbutton_Click(object sender, EventArgs e)
+        private void exitbutton_Click(object sender, EventArgs e) //complete
         {
             Close();
         }
 
-        private void Incorrect_enter_Tick(object sender, EventArgs e)
+        private void Incorrect_enter_Tick(object sender, EventArgs e) //complete
         {
             timer -= 1;
             TimeSpan span = TimeSpan.FromSeconds(timer);

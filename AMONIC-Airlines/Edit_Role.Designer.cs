@@ -35,19 +35,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.off = new System.Windows.Forms.ComboBox();
+            this.officesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.session1_xxDataSet1 = new AMONIC_Airlines.session1_xxDataSet1();
             this.mail = new System.Windows.Forms.TextBox();
             this.first = new System.Windows.Forms.TextBox();
             this.last = new System.Windows.Forms.TextBox();
             this.user = new System.Windows.Forms.RadioButton();
             this.admin = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.session1_xxDataSet1 = new AMONIC_Airlines.session1_xxDataSet1();
-            this.officesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.officesTableAdapter = new AMONIC_Airlines.session1_xxDataSet1TableAdapters.officesTableAdapter();
             this.Apply = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.session1_xxDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.session1_xxDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +55,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(50, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Email address";
             // 
@@ -64,7 +64,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(50, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "First name";
             // 
@@ -73,7 +73,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(50, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.Size = new System.Drawing.Size(81, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Last name";
             // 
@@ -82,7 +82,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(50, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Office";
             // 
@@ -93,16 +93,25 @@
             this.off.FormattingEnabled = true;
             this.off.Location = new System.Drawing.Point(143, 141);
             this.off.Name = "off";
-            this.off.Size = new System.Drawing.Size(184, 21);
+            this.off.Size = new System.Drawing.Size(184, 25);
             this.off.TabIndex = 4;
-            this.off.Text = "[ Office name ]";
             this.off.ValueMember = "ID";
+            // 
+            // officesBindingSource
+            // 
+            this.officesBindingSource.DataMember = "offices";
+            this.officesBindingSource.DataSource = this.session1_xxDataSet1;
+            // 
+            // session1_xxDataSet1
+            // 
+            this.session1_xxDataSet1.DataSetName = "session1_xxDataSet1";
+            this.session1_xxDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // mail
             // 
             this.mail.Location = new System.Drawing.Point(143, 28);
             this.mail.Name = "mail";
-            this.mail.Size = new System.Drawing.Size(184, 21);
+            this.mail.Size = new System.Drawing.Size(184, 24);
             this.mail.TabIndex = 5;
             this.mail.Text = "[ email address ]";
             this.mail.Click += new System.EventHandler(this.mail_Click);
@@ -111,7 +120,7 @@
             // 
             this.first.Location = new System.Drawing.Point(143, 67);
             this.first.Name = "first";
-            this.first.Size = new System.Drawing.Size(184, 21);
+            this.first.Size = new System.Drawing.Size(184, 24);
             this.first.TabIndex = 6;
             this.first.Text = "[ first name ]";
             this.first.Click += new System.EventHandler(this.first_Click);
@@ -120,7 +129,7 @@
             // 
             this.last.Location = new System.Drawing.Point(143, 104);
             this.last.Name = "last";
-            this.last.Size = new System.Drawing.Size(184, 21);
+            this.last.Size = new System.Drawing.Size(184, 24);
             this.last.TabIndex = 7;
             this.last.Text = "[ last name ]";
             this.last.Click += new System.EventHandler(this.last_Click);
@@ -130,7 +139,7 @@
             this.user.AutoSize = true;
             this.user.Location = new System.Drawing.Point(143, 183);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(51, 17);
+            this.user.Size = new System.Drawing.Size(61, 21);
             this.user.TabIndex = 8;
             this.user.TabStop = true;
             this.user.Text = "User";
@@ -141,7 +150,7 @@
             this.admin.AutoSize = true;
             this.admin.Location = new System.Drawing.Point(143, 206);
             this.admin.Name = "admin";
-            this.admin.Size = new System.Drawing.Size(102, 17);
+            this.admin.Size = new System.Drawing.Size(125, 21);
             this.admin.TabIndex = 9;
             this.admin.TabStop = true;
             this.admin.Text = "Administrator";
@@ -152,19 +161,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(50, 197);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(38, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "Role";
-            // 
-            // session1_xxDataSet1
-            // 
-            this.session1_xxDataSet1.DataSetName = "session1_xxDataSet1";
-            this.session1_xxDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // officesBindingSource
-            // 
-            this.officesBindingSource.DataMember = "offices";
-            this.officesBindingSource.DataSource = this.session1_xxDataSet1;
             // 
             // officesTableAdapter
             // 
@@ -174,7 +173,7 @@
             // 
             this.Apply.Location = new System.Drawing.Point(42, 248);
             this.Apply.Name = "Apply";
-            this.Apply.Size = new System.Drawing.Size(75, 23);
+            this.Apply.Size = new System.Drawing.Size(75, 25);
             this.Apply.TabIndex = 11;
             this.Apply.Text = "Apply";
             this.Apply.UseVisualStyleBackColor = true;
@@ -182,17 +181,18 @@
             // 
             // Cancel
             // 
+            this.Cancel.BackColor = System.Drawing.Color.Red;
             this.Cancel.Location = new System.Drawing.Point(263, 248);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 23);
+            this.Cancel.Size = new System.Drawing.Size(75, 25);
             this.Cancel.TabIndex = 12;
             this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // Edit_Role
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 293);
             this.Controls.Add(this.Cancel);
@@ -217,8 +217,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Role";
             this.Load += new System.EventHandler(this.Edit_Role_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.session1_xxDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.session1_xxDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

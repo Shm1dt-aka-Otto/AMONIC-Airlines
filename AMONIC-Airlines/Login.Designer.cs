@@ -56,7 +56,7 @@
             // 
             this.login.Location = new System.Drawing.Point(145, 173);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(310, 20);
+            this.login.Size = new System.Drawing.Size(310, 23);
             this.login.TabIndex = 1;
             // 
             // password
@@ -64,7 +64,7 @@
             this.password.Location = new System.Drawing.Point(145, 212);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(310, 20);
+            this.password.Size = new System.Drawing.Size(310, 23);
             this.password.TabIndex = 2;
             // 
             // label1
@@ -72,7 +72,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(50, 176);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(89, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Username: ";
             // 
@@ -81,7 +81,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(53, 215);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(86, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password: ";
             // 
@@ -97,12 +97,14 @@
             // 
             // exitbutton
             // 
+            this.exitbutton.BackColor = System.Drawing.SystemColors.Control;
+            this.exitbutton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.exitbutton.Location = new System.Drawing.Point(361, 261);
             this.exitbutton.Name = "exitbutton";
             this.exitbutton.Size = new System.Drawing.Size(80, 30);
             this.exitbutton.TabIndex = 6;
             this.exitbutton.Text = "Exit";
-            this.exitbutton.UseVisualStyleBackColor = true;
+            this.exitbutton.UseVisualStyleBackColor = false;
             this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
             // 
             // Incorrect_enter
@@ -116,7 +118,7 @@
             this.ban.ForeColor = System.Drawing.Color.Red;
             this.ban.Location = new System.Drawing.Point(142, 140);
             this.ban.Name = "ban";
-            this.ban.Size = new System.Drawing.Size(257, 13);
+            this.ban.Size = new System.Drawing.Size(315, 17);
             this.ban.TabIndex = 7;
             this.ban.Text = "Incorrect login or password. Try again later.";
             this.ban.Visible = false;
@@ -127,14 +129,14 @@
             this.time.ForeColor = System.Drawing.Color.Red;
             this.time.Location = new System.Drawing.Point(403, 140);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(44, 13);
+            this.time.Size = new System.Drawing.Size(54, 17);
             this.time.TabIndex = 8;
             this.time.Text = "10 sec";
             this.time.Visible = false;
             // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(582, 303);

@@ -34,18 +34,11 @@
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.officeBox = new System.Windows.Forms.ComboBox();
             this.officesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.session1_xxDataSet1 = new AMONIC_Airlines.session1_xxDataSet1();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.officeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.changerole = new System.Windows.Forms.Button();
             this.enabledisable = new System.Windows.Forms.Button();
@@ -70,21 +63,22 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(691, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(691, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.addUserToolStripMenuItem.Text = "Add user";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -93,22 +87,26 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Office:";
             // 
-            // comboBox1
+            // officeBox
             // 
-            this.comboBox1.DataSource = this.officesBindingSource;
-            this.comboBox1.DisplayMember = "Title";
-            this.comboBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(65, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.ValueMember = "ID";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.officeBox.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.officeBox.FormattingEnabled = true;
+            this.officeBox.Items.AddRange(new object[] {
+            "All offices",
+            "Abu dhabi",
+            "Cairo",
+            "Bahrain",
+            "Doha",
+            "Riyadh"});
+            this.officeBox.Location = new System.Drawing.Point(65, 30);
+            this.officeBox.Name = "officeBox";
+            this.officeBox.Size = new System.Drawing.Size(140, 25);
+            this.officeBox.TabIndex = 2;
+            this.officeBox.SelectedIndexChanged += new System.EventHandler(this.officeBox_SelectedIndexChanged);
             // 
             // officesBindingSource
             // 
@@ -126,99 +124,24 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.birthdateDataGridViewTextBoxColumn,
-            this.roleIDDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.officeIDDataGridViewTextBoxColumn,
-            this.activeDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.usersBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(17, 71);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(650, 284);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.firstNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.firstNameDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.lastNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.lastNameDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // birthdateDataGridViewTextBoxColumn
-            // 
-            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "Birthdate";
-            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Age";
-            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
-            this.birthdateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.birthdateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.birthdateDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // roleIDDataGridViewTextBoxColumn
-            // 
-            this.roleIDDataGridViewTextBoxColumn.DataPropertyName = "RoleID";
-            this.roleIDDataGridViewTextBoxColumn.DataSource = this.rolesBindingSource;
-            this.roleIDDataGridViewTextBoxColumn.DisplayMember = "Title";
-            this.roleIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.roleIDDataGridViewTextBoxColumn.HeaderText = "User Role";
-            this.roleIDDataGridViewTextBoxColumn.Name = "roleIDDataGridViewTextBoxColumn";
-            this.roleIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.roleIDDataGridViewTextBoxColumn.ValueMember = "ID";
             // 
             // rolesBindingSource
             // 
             this.rolesBindingSource.DataMember = "roles";
             this.rolesBindingSource.DataSource = this.session1_xxDataSet1;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email address";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.emailDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // officeIDDataGridViewTextBoxColumn
-            // 
-            this.officeIDDataGridViewTextBoxColumn.DataPropertyName = "OfficeID";
-            this.officeIDDataGridViewTextBoxColumn.DataSource = this.officesBindingSource;
-            this.officeIDDataGridViewTextBoxColumn.DisplayMember = "Title";
-            this.officeIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.officeIDDataGridViewTextBoxColumn.HeaderText = "Office";
-            this.officeIDDataGridViewTextBoxColumn.Name = "officeIDDataGridViewTextBoxColumn";
-            this.officeIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.officeIDDataGridViewTextBoxColumn.ValueMember = "ID";
-            // 
-            // activeDataGridViewCheckBoxColumn
-            // 
-            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
-            this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
-            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
-            this.activeDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.activeDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.activeDataGridViewCheckBoxColumn.Visible = false;
             // 
             // usersBindingSource
             // 
@@ -263,13 +186,13 @@
             // 
             // Administrator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 420);
             this.Controls.Add(this.enabledisable);
             this.Controls.Add(this.changerole);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.officeBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -299,7 +222,7 @@
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox officeBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button changerole;
         private System.Windows.Forms.Button enabledisable;
@@ -311,12 +234,5 @@
         private session1_xxDataSet1TableAdapters.officesTableAdapter officesTableAdapter;
         private System.Windows.Forms.BindingSource rolesBindingSource;
         private session1_xxDataSet1TableAdapters.rolesTableAdapter rolesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn roleIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn officeIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activeDataGridViewCheckBoxColumn;
     }
 }
