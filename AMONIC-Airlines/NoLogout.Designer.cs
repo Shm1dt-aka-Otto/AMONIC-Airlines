@@ -42,7 +42,7 @@
             this.detect.AutoSize = true;
             this.detect.Location = new System.Drawing.Point(35, 29);
             this.detect.Name = "detect";
-            this.detect.Size = new System.Drawing.Size(466, 17);
+            this.detect.Size = new System.Drawing.Size(371, 13);
             this.detect.TabIndex = 0;
             this.detect.Text = "No logout detected for your last login on 06/07/2017 at 8:22:00";
             // 
@@ -51,7 +51,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(35, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 17);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Reason:";
             // 
@@ -60,7 +60,7 @@
             this.software.AutoSize = true;
             this.software.Location = new System.Drawing.Point(58, 279);
             this.software.Name = "software";
-            this.software.Size = new System.Drawing.Size(138, 21);
+            this.software.Size = new System.Drawing.Size(114, 17);
             this.software.TabIndex = 2;
             this.software.TabStop = true;
             this.software.Text = "Software Crash";
@@ -71,7 +71,7 @@
             this.sys.AutoSize = true;
             this.sys.Location = new System.Drawing.Point(220, 279);
             this.sys.Name = "sys";
-            this.sys.Size = new System.Drawing.Size(128, 21);
+            this.sys.Size = new System.Drawing.Size(106, 17);
             this.sys.TabIndex = 3;
             this.sys.TabStop = true;
             this.sys.Text = "System Crash";
@@ -85,6 +85,7 @@
             this.confirm.TabIndex = 4;
             this.confirm.Text = "Confirm";
             this.confirm.UseVisualStyleBackColor = true;
+            this.confirm.Click += new System.EventHandler(this.confirm_Click);
             // 
             // reasonBox
             // 
@@ -96,7 +97,7 @@
             // 
             // NoLogout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 330);
             this.Controls.Add(this.reasonBox);
@@ -113,6 +114,7 @@
             this.Name = "NoLogout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "No logout detected";
+            this.Load += new System.EventHandler(this.NoLogout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

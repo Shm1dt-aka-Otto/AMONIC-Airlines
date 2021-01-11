@@ -14,9 +14,11 @@ namespace AMONIC_Airlines
 {
     public partial class Administrator : Form
     {
-        public Administrator()
+        string mail, enter;
+        public Administrator(string email)
         {
             InitializeComponent();
+            mail = email;
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) //complete
         {
@@ -191,6 +193,27 @@ namespace AMONIC_Airlines
                 conn.Close();
             }
             UpdateTable();
+        }
+
+        private void Administrator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string connection_to_server = "server=localhost;user=root;" +
+                "database=session1_xx;password=As89149625780@;";
+            MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
+            connection_to_datebase.Open();
+            string sql = "SELECT ID FROM trecking WHERE Email = '" + mail + "'";
+            MySqlCommand cmnd = new MySqlCommand(sql, connection_to_datebase);
+            MySqlDataReader reader = cmnd.ExecuteReader();
+            while (reader.Read())
+            {
+                enter = reader[0].ToString();
+            }
+            reader.Close();
+            string query = "UPDATE trecking SET Logout_date = CURDATE(), Logout_time = CURTIME() " +
+                "WHERE Email = '" + mail + "' AND ID = " + enter;
+            MySqlCommand command = new MySqlCommand(query, connection_to_datebase);
+            command.ExecuteNonQuery();
+            connection_to_datebase.Close();
         }
     }
 }

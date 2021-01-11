@@ -17,7 +17,7 @@ namespace AMONIC_Airlines
         bool pass = false;
         int trying = 0;
         int timer = 10;
-        string email;
+        string email, id, enter_date, enter_time;
         Thread log;
         public LoginPage()
         {
@@ -29,21 +29,54 @@ namespace AMONIC_Airlines
                "database=session1_xx;password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
+            string sql = "SELECT ID, Enter_date, Enter_time, Logout_date FROM trecking WHERE Email = '" + email + "'";
+            MySqlCommand cmnd = new MySqlCommand(sql, connection_to_datebase);
+            MySqlDataReader reader = cmnd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader[4].ToString() == "")
+                {
+                    id = reader[0].ToString();
+                    enter_date = reader[1].ToString();
+                    enter_time = reader[2].ToString();
+                    NoLogout nlg = new NoLogout(id, enter_date, enter_time);
+                    nlg.ShowDialog();
+                }
+            }
+            reader.Close();
             string query = "INSERT INTO trecking (Email, Enter_date, Enter_time) VALUES ('" + email
-                + "', UTC_DATE(), UTC_TIME())";
+                + "', CURDATE(), CURTIME())";
             MySqlCommand command = new MySqlCommand(query, connection_to_datebase);
             command.ExecuteNonQuery();
             connection_to_datebase.Close();
-            Application.Run(new Administrator());
+            Application.Run(new Administrator(email));
         }
         public void user()
         {
             string connection_to_server = "server=localhost;user=root;" +
-                "database=session1_xx;password=As89149625780@;";
+               "database=session1_xx;password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
+            string sql = "SELECT ID, Enter_date, Enter_time, Logout_date FROM trecking WHERE Email = '" + email + "'";
+            MySqlCommand cmnd = new MySqlCommand(sql, connection_to_datebase);
+            MySqlDataReader reader = cmnd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader[3].ToString() == "")
+                {
+                    id = reader[0].ToString();
+                    enter_date = reader[1].ToString();
+                    enter_time = reader[2].ToString();
+                    NoLogout nlg = new NoLogout(id, enter_date, enter_time);
+                    nlg.ShowDialog();
+                }
+            }
+            reader.Close();
             string query = "INSERT INTO trecking (Email, Enter_date, Enter_time) VALUES ('" + email
-                + "', UTC_DATE(), UTC_TIME())";
+                + "', CURDATE(), CURTIME())";
+            MySqlCommand command = new MySqlCommand(query, connection_to_datebase);
+            command.ExecuteNonQuery();
+            connection_to_datebase.Close();
             Application.Run(new User(email));
         }
         private void loginbutton_Click(object sender, EventArgs e)
@@ -113,6 +146,7 @@ namespace AMONIC_Airlines
                 ban.Visible = false;
                 loginbutton.Enabled = true;
                 trying = 0;
+                Incorrect_enter.Stop();
             }
         }
     }
