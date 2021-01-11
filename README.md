@@ -1,9 +1,9 @@
 # AMONIC-Airlines
 <h>Курсовой проект<h/>
-Документация: Complete
-Сессия 1: Complete
-Сессия 2: In work
-Сессия 3: In work
-Сессия 4: In work
-Сессия 5: In work
+Документация: Complete</br>
+Сессия 1: Complete</br>
+Сессия 2: In work</br>
+Сессия 3: In work</br>
+Сессия 4: In work</br>
+Сессия 5: In work</br>
 Сессия 6: In work
