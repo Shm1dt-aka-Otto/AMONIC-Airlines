@@ -1,5 +1,5 @@
 # AMONIC-Airlines
-Курсовой проект
+<h>Курсовой проект<h/>
 Документация: Complete
 Сессия 1: Complete
 Сессия 2: In work
