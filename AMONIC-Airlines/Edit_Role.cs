@@ -18,19 +18,19 @@ namespace AMONIC_Airlines
             InitializeComponent();
         }
 
-        private void Edit_Role_Load(object sender, EventArgs e)
+        private void Edit_Role_Load(object sender, EventArgs e) //complete
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "session1_xxDataSet1.offices". При необходимости она может быть перемещена или удалена.
             this.officesTableAdapter.Fill(this.session1_xxDataSet1.offices);
 
         }
 
-        private void Cancel_Click(object sender, EventArgs e)
+        private void Cancel_Click(object sender, EventArgs e) //complete
         {
             Close();
         }
 
-        private void Apply_Click(object sender, EventArgs e)
+        private void Apply_Click(object sender, EventArgs e) //complete
         {
             if (mail.Text == "" || first.Text == "" || last.Text == ""
                 || off.Text == "" || (user.Checked == false && admin.Checked == false))
@@ -65,17 +65,17 @@ namespace AMONIC_Airlines
             }
         }
 
-        private void mail_Click(object sender, EventArgs e)
+        private void mail_Click(object sender, EventArgs e) //complete
         {
             mail.Text = "";
         }
 
-        private void first_Click(object sender, EventArgs e)
+        private void first_Click(object sender, EventArgs e) //complete
         {
             first.Text = "";
         }
 
-        private void last_Click(object sender, EventArgs e)
+        private void last_Click(object sender, EventArgs e) //complete
         {
             last.Text = "";
         }

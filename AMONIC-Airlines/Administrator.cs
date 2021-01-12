@@ -195,7 +195,7 @@ namespace AMONIC_Airlines
             UpdateTable();
         }
 
-        private void Administrator_FormClosing(object sender, FormClosingEventArgs e)
+        private void Administrator_FormClosing(object sender, FormClosingEventArgs e) //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
                 "database=session1_xx;password=As89149625780@;";

@@ -18,7 +18,7 @@ namespace AMONIC_Airlines
             InitializeComponent();
         }
 
-        private void Save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e) //complete
         {
             if (mail.Text == "" || first.Text == "" || last.Text == "" ||
                 off.Text == "" || date.Text == "" || pass.Text == "")
@@ -65,17 +65,17 @@ namespace AMONIC_Airlines
             }
         }
 
-        private void Cancel_Click(object sender, EventArgs e)
+        private void Cancel_Click(object sender, EventArgs e) //complete
         {
             Close();
         }
 
-        private void Add_usercs_Load(object sender, EventArgs e)
+        private void Add_usercs_Load(object sender, EventArgs e) //complete
         {
             this.officesTableAdapter.Fill(this.session1_xxDataSet1.offices);
         }
 
-        private void date_Click(object sender, EventArgs e)
+        private void date_Click(object sender, EventArgs e) //complete
         {
             date.Text = "";
         }

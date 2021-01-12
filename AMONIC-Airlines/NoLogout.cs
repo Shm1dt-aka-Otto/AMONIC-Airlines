@@ -22,7 +22,7 @@ namespace AMONIC_Airlines
             time = enter_time;
         }
 
-        private void confirm_Click(object sender, EventArgs e)
+        private void confirm_Click(object sender, EventArgs e) //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
                    "database=session1_xx;password=As89149625780@;";
@@ -52,7 +52,7 @@ namespace AMONIC_Airlines
             Close();
         }
 
-        private void NoLogout_Load(object sender, EventArgs e)
+        private void NoLogout_Load(object sender, EventArgs e) //complete
         {
             string[] sp = date.Split(' ');
             string spp = sp[0];

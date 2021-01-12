@@ -34,7 +34,7 @@ namespace AMONIC_Airlines
             MySqlDataReader reader = cmnd.ExecuteReader();
             while (reader.Read())
             {
-                if (reader[4].ToString() == "")
+                if (reader[3].ToString() == "")
                 {
                     id = reader[0].ToString();
                     enter_date = reader[1].ToString();
@@ -51,7 +51,7 @@ namespace AMONIC_Airlines
             connection_to_datebase.Close();
             Application.Run(new Administrator(email));
         }
-        public void user()
+        public void user() //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
                "database=session1_xx;password=As89149625780@;";
@@ -79,7 +79,7 @@ namespace AMONIC_Airlines
             connection_to_datebase.Close();
             Application.Run(new User(email));
         }
-        private void loginbutton_Click(object sender, EventArgs e)
+        private void loginbutton_Click(object sender, EventArgs e) //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
                 "database=session1_xx;password=As89149625780@;";
