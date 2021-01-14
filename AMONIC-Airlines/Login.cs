@@ -29,18 +29,24 @@ namespace AMONIC_Airlines
                "database=session1_xx;password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
-            string sql = "SELECT ID, Enter_date, Enter_time, Logout_date FROM trecking WHERE Email = '" + email + "'";
+            string sql = "SELECT ID, Enter_date, Enter_time, Logout_date, Crash_type FROM trecking WHERE Email = '" + email + "'";
             MySqlCommand cmnd = new MySqlCommand(sql, connection_to_datebase);
             MySqlDataReader reader = cmnd.ExecuteReader();
             while (reader.Read())
             {
                 if (reader[3].ToString() == "")
                 {
-                    id = reader[0].ToString();
-                    enter_date = reader[1].ToString();
-                    enter_time = reader[2].ToString();
-                    NoLogout nlg = new NoLogout(id, enter_date, enter_time);
-                    nlg.ShowDialog();
+                    if (reader[4].ToString() != "system crash")
+                    {
+                        if (reader[4].ToString() != "software crash")
+                        {
+                            id = reader[0].ToString();
+                            enter_date = reader[1].ToString();
+                            enter_time = reader[2].ToString();
+                            NoLogout nlg = new NoLogout(id, enter_date, enter_time);
+                            nlg.ShowDialog();
+                        }
+                    }
                 }
             }
             reader.Close();

@@ -56,7 +56,7 @@ namespace AMONIC_Airlines
         {
             string[] sp = date.Split(' ');
             string spp = sp[0];
-            detect.Text = "No logout detected for your last login on " + spp + "at " + time;
+            detect.Text = "No logout detected for your last login on " + spp + " at " + time;
         }
     }
 }
