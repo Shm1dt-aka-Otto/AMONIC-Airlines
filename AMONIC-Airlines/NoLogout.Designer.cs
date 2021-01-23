@@ -29,63 +29,63 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoLogout));
-            this.detect = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.software = new System.Windows.Forms.RadioButton();
-            this.sys = new System.Windows.Forms.RadioButton();
-            this.confirm = new System.Windows.Forms.Button();
+            this.noLogoutLabel = new System.Windows.Forms.Label();
+            this.reasonLabel = new System.Windows.Forms.Label();
+            this.softwareRadioButton = new System.Windows.Forms.RadioButton();
+            this.systemRadioButton = new System.Windows.Forms.RadioButton();
+            this.confirmButton = new System.Windows.Forms.Button();
             this.reasonBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // detect
+            // noLogoutLabel
             // 
-            this.detect.AutoSize = true;
-            this.detect.Location = new System.Drawing.Point(35, 29);
-            this.detect.Name = "detect";
-            this.detect.Size = new System.Drawing.Size(371, 13);
-            this.detect.TabIndex = 0;
-            this.detect.Text = "No logout detected for your last login on 06/07/2017 at 8:22:00";
+            this.noLogoutLabel.AutoSize = true;
+            this.noLogoutLabel.Location = new System.Drawing.Point(35, 29);
+            this.noLogoutLabel.Name = "noLogoutLabel";
+            this.noLogoutLabel.Size = new System.Drawing.Size(466, 17);
+            this.noLogoutLabel.TabIndex = 0;
+            this.noLogoutLabel.Text = "No logout detected for your last login on 06/07/2017 at 8:22:00";
             // 
-            // label2
+            // reasonLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Reason:";
+            this.reasonLabel.AutoSize = true;
+            this.reasonLabel.Location = new System.Drawing.Point(35, 71);
+            this.reasonLabel.Name = "reasonLabel";
+            this.reasonLabel.Size = new System.Drawing.Size(66, 17);
+            this.reasonLabel.TabIndex = 1;
+            this.reasonLabel.Text = "Reason:";
             // 
-            // software
+            // softwareRadioButton
             // 
-            this.software.AutoSize = true;
-            this.software.Location = new System.Drawing.Point(58, 279);
-            this.software.Name = "software";
-            this.software.Size = new System.Drawing.Size(114, 17);
-            this.software.TabIndex = 2;
-            this.software.TabStop = true;
-            this.software.Text = "Software Crash";
-            this.software.UseVisualStyleBackColor = true;
+            this.softwareRadioButton.AutoSize = true;
+            this.softwareRadioButton.Location = new System.Drawing.Point(58, 279);
+            this.softwareRadioButton.Name = "softwareRadioButton";
+            this.softwareRadioButton.Size = new System.Drawing.Size(138, 21);
+            this.softwareRadioButton.TabIndex = 2;
+            this.softwareRadioButton.TabStop = true;
+            this.softwareRadioButton.Text = "Software Crash";
+            this.softwareRadioButton.UseVisualStyleBackColor = true;
             // 
-            // sys
+            // systemRadioButton
             // 
-            this.sys.AutoSize = true;
-            this.sys.Location = new System.Drawing.Point(220, 279);
-            this.sys.Name = "sys";
-            this.sys.Size = new System.Drawing.Size(106, 17);
-            this.sys.TabIndex = 3;
-            this.sys.TabStop = true;
-            this.sys.Text = "System Crash";
-            this.sys.UseVisualStyleBackColor = true;
+            this.systemRadioButton.AutoSize = true;
+            this.systemRadioButton.Location = new System.Drawing.Point(220, 279);
+            this.systemRadioButton.Name = "systemRadioButton";
+            this.systemRadioButton.Size = new System.Drawing.Size(128, 21);
+            this.systemRadioButton.TabIndex = 3;
+            this.systemRadioButton.TabStop = true;
+            this.systemRadioButton.Text = "System Crash";
+            this.systemRadioButton.UseVisualStyleBackColor = true;
             // 
-            // confirm
+            // confirmButton
             // 
-            this.confirm.Location = new System.Drawing.Point(416, 279);
-            this.confirm.Name = "confirm";
-            this.confirm.Size = new System.Drawing.Size(107, 23);
-            this.confirm.TabIndex = 4;
-            this.confirm.Text = "Confirm";
-            this.confirm.UseVisualStyleBackColor = true;
-            this.confirm.Click += new System.EventHandler(this.confirm_Click);
+            this.confirmButton.Location = new System.Drawing.Point(416, 279);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(107, 23);
+            this.confirmButton.TabIndex = 4;
+            this.confirmButton.Text = "Confirm";
+            this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // reasonBox
             // 
@@ -97,15 +97,15 @@
             // 
             // NoLogout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 330);
             this.Controls.Add(this.reasonBox);
-            this.Controls.Add(this.confirm);
-            this.Controls.Add(this.sys);
-            this.Controls.Add(this.software);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.detect);
+            this.Controls.Add(this.confirmButton);
+            this.Controls.Add(this.systemRadioButton);
+            this.Controls.Add(this.softwareRadioButton);
+            this.Controls.Add(this.reasonLabel);
+            this.Controls.Add(this.noLogoutLabel);
             this.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -122,11 +122,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label detect;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton software;
-        private System.Windows.Forms.RadioButton sys;
-        private System.Windows.Forms.Button confirm;
+        private System.Windows.Forms.Label noLogoutLabel;
+        private System.Windows.Forms.Label reasonLabel;
+        private System.Windows.Forms.RadioButton softwareRadioButton;
+        private System.Windows.Forms.RadioButton systemRadioButton;
+        private System.Windows.Forms.Button confirmButton;
         private System.Windows.Forms.TextBox reasonBox;
     }
 }

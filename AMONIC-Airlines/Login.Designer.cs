@@ -30,109 +30,109 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
-            this.amonic_picture = new System.Windows.Forms.PictureBox();
-            this.login = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.loginbutton = new System.Windows.Forms.Button();
-            this.exitbutton = new System.Windows.Forms.Button();
-            this.Incorrect_enter = new System.Windows.Forms.Timer(this.components);
-            this.ban = new System.Windows.Forms.Label();
-            this.time = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.amonic_picture)).BeginInit();
+            this.amonicPictureBox = new System.Windows.Forms.PictureBox();
+            this.loginTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.loginLabel = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.IncorrectEnterTimer = new System.Windows.Forms.Timer(this.components);
+            this.banLabel = new System.Windows.Forms.Label();
+            this.timerLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.amonicPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // amonic_picture
+            // amonicPictureBox
             // 
-            this.amonic_picture.Image = ((System.Drawing.Image)(resources.GetObject("amonic_picture.Image")));
-            this.amonic_picture.Location = new System.Drawing.Point(145, 28);
-            this.amonic_picture.Name = "amonic_picture";
-            this.amonic_picture.Size = new System.Drawing.Size(310, 100);
-            this.amonic_picture.TabIndex = 0;
-            this.amonic_picture.TabStop = false;
+            this.amonicPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("amonicPictureBox.Image")));
+            this.amonicPictureBox.Location = new System.Drawing.Point(145, 28);
+            this.amonicPictureBox.Name = "amonicPictureBox";
+            this.amonicPictureBox.Size = new System.Drawing.Size(310, 100);
+            this.amonicPictureBox.TabIndex = 0;
+            this.amonicPictureBox.TabStop = false;
             // 
-            // login
+            // loginTextBox
             // 
-            this.login.Location = new System.Drawing.Point(145, 173);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(310, 23);
-            this.login.TabIndex = 1;
+            this.loginTextBox.Location = new System.Drawing.Point(145, 173);
+            this.loginTextBox.Name = "loginTextBox";
+            this.loginTextBox.Size = new System.Drawing.Size(310, 23);
+            this.loginTextBox.TabIndex = 1;
             // 
-            // password
+            // passwordTextBox
             // 
-            this.password.Location = new System.Drawing.Point(145, 212);
-            this.password.Name = "password";
-            this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(310, 23);
-            this.password.TabIndex = 2;
+            this.passwordTextBox.Location = new System.Drawing.Point(145, 212);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(310, 23);
+            this.passwordTextBox.TabIndex = 2;
             // 
-            // label1
+            // loginLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 176);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Username: ";
+            this.loginLabel.AutoSize = true;
+            this.loginLabel.Location = new System.Drawing.Point(50, 176);
+            this.loginLabel.Name = "loginLabel";
+            this.loginLabel.Size = new System.Drawing.Size(89, 17);
+            this.loginLabel.TabIndex = 3;
+            this.loginLabel.Text = "Username: ";
             // 
-            // label2
+            // passwordLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 215);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Password: ";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(53, 215);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(86, 17);
+            this.passwordLabel.TabIndex = 4;
+            this.passwordLabel.Text = "Password: ";
             // 
-            // loginbutton
+            // loginButton
             // 
-            this.loginbutton.Location = new System.Drawing.Point(159, 261);
-            this.loginbutton.Name = "loginbutton";
-            this.loginbutton.Size = new System.Drawing.Size(80, 30);
-            this.loginbutton.TabIndex = 5;
-            this.loginbutton.Text = "Login";
-            this.loginbutton.UseVisualStyleBackColor = true;
-            this.loginbutton.Click += new System.EventHandler(this.loginbutton_Click);
+            this.loginButton.Location = new System.Drawing.Point(159, 261);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(80, 30);
+            this.loginButton.TabIndex = 5;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButtonClick);
             // 
-            // exitbutton
+            // exitButton
             // 
-            this.exitbutton.BackColor = System.Drawing.SystemColors.Control;
-            this.exitbutton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.exitbutton.Location = new System.Drawing.Point(361, 261);
-            this.exitbutton.Name = "exitbutton";
-            this.exitbutton.Size = new System.Drawing.Size(80, 30);
-            this.exitbutton.TabIndex = 6;
-            this.exitbutton.Text = "Exit";
-            this.exitbutton.UseVisualStyleBackColor = false;
-            this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
+            this.exitButton.BackColor = System.Drawing.SystemColors.Control;
+            this.exitButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.exitButton.Location = new System.Drawing.Point(361, 261);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(80, 30);
+            this.exitButton.TabIndex = 6;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButtonClick);
             // 
-            // Incorrect_enter
+            // IncorrectEnterTimer
             // 
-            this.Incorrect_enter.Interval = 1000;
-            this.Incorrect_enter.Tick += new System.EventHandler(this.Incorrect_enter_Tick);
+            this.IncorrectEnterTimer.Interval = 1000;
+            this.IncorrectEnterTimer.Tick += new System.EventHandler(this.IncorrectEnterTimerTick);
             // 
-            // ban
+            // banLabel
             // 
-            this.ban.AutoSize = true;
-            this.ban.ForeColor = System.Drawing.Color.Red;
-            this.ban.Location = new System.Drawing.Point(142, 140);
-            this.ban.Name = "ban";
-            this.ban.Size = new System.Drawing.Size(315, 17);
-            this.ban.TabIndex = 7;
-            this.ban.Text = "Incorrect login or password. Try again later.";
-            this.ban.Visible = false;
+            this.banLabel.AutoSize = true;
+            this.banLabel.ForeColor = System.Drawing.Color.Red;
+            this.banLabel.Location = new System.Drawing.Point(142, 140);
+            this.banLabel.Name = "banLabel";
+            this.banLabel.Size = new System.Drawing.Size(315, 17);
+            this.banLabel.TabIndex = 7;
+            this.banLabel.Text = "Incorrect login or password. Try again later.";
+            this.banLabel.Visible = false;
             // 
-            // time
+            // timerLabel
             // 
-            this.time.AutoSize = true;
-            this.time.ForeColor = System.Drawing.Color.Red;
-            this.time.Location = new System.Drawing.Point(403, 140);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(54, 17);
-            this.time.TabIndex = 8;
-            this.time.Text = "10 sec";
-            this.time.Visible = false;
+            this.timerLabel.AutoSize = true;
+            this.timerLabel.ForeColor = System.Drawing.Color.Red;
+            this.timerLabel.Location = new System.Drawing.Point(412, 140);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(47, 17);
+            this.timerLabel.TabIndex = 8;
+            this.timerLabel.Text = "Timer";
+            this.timerLabel.Visible = false;
             // 
             // LoginPage
             // 
@@ -140,15 +140,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(582, 303);
-            this.Controls.Add(this.time);
-            this.Controls.Add(this.ban);
-            this.Controls.Add(this.exitbutton);
-            this.Controls.Add(this.loginbutton);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.login);
-            this.Controls.Add(this.amonic_picture);
+            this.Controls.Add(this.timerLabel);
+            this.Controls.Add(this.banLabel);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.passwordLabel);
+            this.Controls.Add(this.loginLabel);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.loginTextBox);
+            this.Controls.Add(this.amonicPictureBox);
             this.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -157,7 +157,7 @@
             this.Name = "LoginPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.amonic_picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amonicPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,16 +165,16 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox amonic_picture;
-        private System.Windows.Forms.TextBox login;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button loginbutton;
-        private System.Windows.Forms.Button exitbutton;
-        private System.Windows.Forms.Timer Incorrect_enter;
-        private System.Windows.Forms.Label ban;
-        private System.Windows.Forms.Label time;
+        private System.Windows.Forms.PictureBox amonicPictureBox;
+        private System.Windows.Forms.TextBox loginTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Label loginLabel;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Timer IncorrectEnterTimer;
+        private System.Windows.Forms.Label banLabel;
+        private System.Windows.Forms.Label timerLabel;
     }
 }
 

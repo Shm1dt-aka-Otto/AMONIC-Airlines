@@ -92,11 +92,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add user.cs">
+    <Compile Include="AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add user.Designer.cs">
-      <DependentUpon>Add user.cs</DependentUpon>
+    <Compile Include="AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrator.cs">
       <SubType>Form</SubType>
@@ -104,11 +104,11 @@
     <Compile Include="Administrator.Designer.cs">
       <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
-    <Compile Include="Edit_Role.cs">
+    <Compile Include="EditRole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Edit_Role.Designer.cs">
-      <DependentUpon>Edit_Role.cs</DependentUpon>
+    <Compile Include="EditRole.Designer.cs">
+      <DependentUpon>EditRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -135,14 +135,14 @@
     <Compile Include="User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Add user.resx">
-      <DependentUpon>Add user.cs</DependentUpon>
+    <EmbeddedResource Include="AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Edit_Role.resx">
-      <DependentUpon>Edit_Role.cs</DependentUpon>
+    <EmbeddedResource Include="EditRole.resx">
+      <DependentUpon>EditRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

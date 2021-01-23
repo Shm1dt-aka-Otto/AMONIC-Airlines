@@ -13,36 +13,36 @@ namespace AMONIC_Airlines
 {
     public partial class NoLogout : Form
     {
-        string i, date, time;
-        public NoLogout(string id, string enter_date, string enter_time)
+        string idUserLogout, dateUserLogout, timeUserLogout;
+        public NoLogout(string id, string enterDate, string enterTime) //complete
         {
             InitializeComponent();
-            i = id;
-            date = enter_date;
-            time = enter_time;
+            idUserLogout = id;
+            dateUserLogout = enterDate;
+            timeUserLogout = enterTime;
         }
 
-        private void confirm_Click(object sender, EventArgs e) //complete
+        private void confirmButton_Click(object sender, EventArgs e) //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
-                   "database=session1_xx;password=As89149625780@;";
+       "database=session1_xx;password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
-            if (software.Checked)
+            if (softwareRadioButton.Checked)
             {
                 string query = "UPDATE trecking SET Crash_report = '" +
-                    reasonBox.Text + "', Crash_type = 'software crash' WHERE ID = " + i;
-                MySqlCommand command = new MySqlCommand(query, connection_to_datebase);
-                command.ExecuteNonQuery();
+                    reasonBox.Text + "', Crash_type = 'software crash', Logout_date = '0001-01-01' WHERE ID = " + idUserLogout;
+                MySqlCommand commandOne = new MySqlCommand(query, connection_to_datebase);
+                commandOne.ExecuteNonQuery();
             }
-            else if (sys.Checked)
+            else if (systemRadioButton.Checked)
             {
                 string query = "UPDATE trecking SET Crash_report = '" +
-                       reasonBox.Text + "', Crash_type = 'system crash' WHERE ID = " + i;
-                MySqlCommand command = new MySqlCommand(query, connection_to_datebase);
-                command.ExecuteNonQuery();
+                       reasonBox.Text + "', Crash_type = 'system crash', Logout_date = '0001-01-01' WHERE ID = " + idUserLogout;
+                MySqlCommand commandTwo = new MySqlCommand(query, connection_to_datebase);
+                commandTwo.ExecuteNonQuery();
             }
-            else if (software.Checked == false && sys.Checked == false)
+            else if (softwareRadioButton.Checked == false && systemRadioButton.Checked == false)
             {
                 DialogResult dialog = MessageBox.Show("You must fill every statements " +
                         "into fields",
@@ -51,12 +51,11 @@ namespace AMONIC_Airlines
             connection_to_datebase.Close();
             Close();
         }
-
         private void NoLogout_Load(object sender, EventArgs e) //complete
         {
-            string[] sp = date.Split(' ');
-            string spp = sp[0];
-            detect.Text = "No logout detected for your last login on " + spp + " at " + time;
+            string[] dateSplit = dateUserLogout.Split(' ');
+            string dateOfLogin = dateSplit[0];
+            noLogoutLabel.Text = "No logout detected for your last login on " + dateOfLogin + " at " + timeUserLogout;
         }
     }
 }
