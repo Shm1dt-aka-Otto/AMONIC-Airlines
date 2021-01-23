@@ -26,7 +26,7 @@ namespace AMONIC_Airlines
         }
         private void UpdateTable() //complete
         {
-            string connection_to_server = "server=localhost;user=root;database=session1_xx;" +
+            string connection_to_server = "server=localhost;user=root;database=amonic-airlines;" +
                 "password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
@@ -94,7 +94,7 @@ namespace AMONIC_Airlines
         private void Administrator_Load(object sender, EventArgs e) //complete
         {
             officeBox.SelectedIndex = 0;
-            string connection_to_server = "server=localhost;user=root;database=session1_xx;" +
+            string connection_to_server = "server=localhost;user=root;database=amonic-airlines;" +
                 "password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
@@ -165,7 +165,7 @@ namespace AMONIC_Airlines
         }
         private void enableDisableButton_Click(object sender, EventArgs e) //complete
         {
-            string connection_to_server = "server=localhost;user=root;database=session1_xx;" +
+            string connection_to_server = "server=localhost;user=root;database=amonic-airlines;" +
                 "password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
@@ -197,7 +197,7 @@ namespace AMONIC_Airlines
         private void Administrator_FormClosing(object sender, FormClosingEventArgs e) //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
-                "database=session1_xx;password=As89149625780@;";
+                "database=amonic-airlines;password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
             string sqlFour = "SELECT ID FROM trecking WHERE Email = '" + emailAdministrator + "'";

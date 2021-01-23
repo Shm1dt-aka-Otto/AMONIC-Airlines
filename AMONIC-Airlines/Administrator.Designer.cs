@@ -35,23 +35,13 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.officeLabel = new System.Windows.Forms.Label();
             this.officeBox = new System.Windows.Forms.ComboBox();
-            this.officesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.session1_xxDataSet1 = new AMONIC_Airlines.session1_xxDataSet1();
             this.administratorGridView = new System.Windows.Forms.DataGridView();
             this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.changeRoleButton = new System.Windows.Forms.Button();
             this.enableDisableButton = new System.Windows.Forms.Button();
-            this.countriesTableAdapter = new AMONIC_Airlines.session1_xxDataSet1TableAdapters.countriesTableAdapter();
-            this.usersTableAdapter = new AMONIC_Airlines.session1_xxDataSet1TableAdapters.usersTableAdapter();
-            this.officesTableAdapter = new AMONIC_Airlines.session1_xxDataSet1TableAdapters.officesTableAdapter();
-            this.rolesTableAdapter = new AMONIC_Airlines.session1_xxDataSet1TableAdapters.rolesTableAdapter();
             this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.session1_xxDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.administratorGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -108,16 +98,6 @@
             this.officeBox.TabIndex = 2;
             this.officeBox.SelectedIndexChanged += new System.EventHandler(this.officeBox_SelectedIndexChanged);
             // 
-            // officesBindingSource
-            // 
-            this.officesBindingSource.DataMember = "offices";
-            this.officesBindingSource.DataSource = this.session1_xxDataSet1;
-            // 
-            // session1_xxDataSet1
-            // 
-            this.session1_xxDataSet1.DataSetName = "session1_xxDataSet1";
-            this.session1_xxDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // administratorGridView
             // 
             this.administratorGridView.AllowUserToAddRows = false;
@@ -138,16 +118,6 @@
             this.administratorGridView.Size = new System.Drawing.Size(650, 284);
             this.administratorGridView.TabIndex = 3;
             // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "roles";
-            this.rolesBindingSource.DataSource = this.session1_xxDataSet1;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.session1_xxDataSet1;
-            // 
             // changeRoleButton
             // 
             this.changeRoleButton.Location = new System.Drawing.Point(17, 375);
@@ -167,22 +137,6 @@
             this.enableDisableButton.Text = "Enable/Disable Login";
             this.enableDisableButton.UseVisualStyleBackColor = true;
             this.enableDisableButton.Click += new System.EventHandler(this.enableDisableButton_Click);
-            // 
-            // countriesTableAdapter
-            // 
-            this.countriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // officesTableAdapter
-            // 
-            this.officesTableAdapter.ClearBeforeFill = true;
-            // 
-            // rolesTableAdapter
-            // 
-            this.rolesTableAdapter.ClearBeforeFill = true;
             // 
             // Administrator
             // 
@@ -207,11 +161,8 @@
             this.Load += new System.EventHandler(this.Administrator_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.session1_xxDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.administratorGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,13 +178,6 @@
         private System.Windows.Forms.DataGridView administratorGridView;
         private System.Windows.Forms.Button changeRoleButton;
         private System.Windows.Forms.Button enableDisableButton;
-        private session1_xxDataSet1TableAdapters.countriesTableAdapter countriesTableAdapter;
-        private session1_xxDataSet1 session1_xxDataSet1;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private session1_xxDataSet1TableAdapters.usersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.BindingSource officesBindingSource;
-        private session1_xxDataSet1TableAdapters.officesTableAdapter officesTableAdapter;
         private System.Windows.Forms.BindingSource rolesBindingSource;
-        private session1_xxDataSet1TableAdapters.rolesTableAdapter rolesTableAdapter;
     }
 }

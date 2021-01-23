@@ -26,7 +26,7 @@ namespace AMONIC_Airlines
         public void admin() //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
-               "database=session1_xx;password=As89149625780@;";
+               "database=amonic-airlines;password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
             string sqlTwo = "SELECT ID, Enter_date, Enter_time, Logout_date, Crash_type FROM trecking WHERE Email = '" + email + "'";
@@ -54,7 +54,7 @@ namespace AMONIC_Airlines
         public void user() //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
-               "database=session1_xx;password=As89149625780@;";
+               "database=amonic-airlines;password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
             string sqlTwo = "SELECT ID, Enter_date, Enter_time, Logout_date FROM trecking WHERE Email = '" + email + "'";
@@ -82,7 +82,7 @@ namespace AMONIC_Airlines
         private void loginButtonClick(object sender, EventArgs e) //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
-                "database=session1_xx;password=As89149625780@;";
+                "database=amonic-airlines;password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
             string sqlOne = "SELECT Email, Password, RoleID, Active FROM users " +
@@ -116,6 +116,7 @@ namespace AMONIC_Airlines
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            readerOne.Close();
             if (pass == false)
             {
                 banLabel.Visible = true;

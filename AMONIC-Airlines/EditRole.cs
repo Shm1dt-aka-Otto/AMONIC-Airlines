@@ -19,7 +19,7 @@ namespace AMONIC_Airlines
         }
         private void Edit_Role_Load(object sender, EventArgs e) //complete
         {
-            this.officesTableAdapter.Fill(this.session1_xxDataSet1.offices);
+            this.officesTableAdapter1.Fill(this._amonic_airlinesDataSet.offices);
         }
         private void applyButton_Click(object sender, EventArgs e) //complete
         {
@@ -32,25 +32,25 @@ namespace AMONIC_Airlines
             }
             else
             {
-                string connStr = "server=localhost;user=root;database=session1_xx;" +
+                string connection_to_server = "server=localhost;user=root;database=amonic-airlines;" +
                 "password=As89149625780@;";
-                MySqlConnection conn = new MySqlConnection(connStr);
-                conn.Open();
+                MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
+                connection_to_datebase.Open();
                 string email = emailBox.Text;
                 if (userRadioButton.Checked)
                 {
-                    string query = "UPDATE users SET RoleID = 2 WHERE Email = '" + email + "'";
-                    MySqlCommand command = new MySqlCommand(query, conn);
-                    command.ExecuteNonQuery();
-                    conn.Close();
+                    string queryOne = "UPDATE users SET RoleID = 2 WHERE Email = '" + email + "'";
+                    MySqlCommand commandOne = new MySqlCommand(queryOne, connection_to_datebase);
+                    commandOne.ExecuteNonQuery();
+                    connection_to_datebase.Close();
                     Close();
                 }
                 else if (administratorRadioButton.Checked)
                 {
-                    string query = "UPDATE users SET RoleID = 1 WHERE Email = '" + email + "'";
-                    MySqlCommand command = new MySqlCommand(query, conn);
-                    command.ExecuteNonQuery();
-                    conn.Close();
+                    string queryOne = "UPDATE users SET RoleID = 1 WHERE Email = '" + email + "'";
+                    MySqlCommand commandOne = new MySqlCommand(queryOne, connection_to_datebase);
+                    commandOne.ExecuteNonQuery();
+                    connection_to_datebase.Close();
                     Close();
                 }
             }

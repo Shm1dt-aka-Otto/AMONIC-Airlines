@@ -19,7 +19,8 @@ namespace AMONIC_Airlines
         }
         private void Add_usercs_Load(object sender, EventArgs e) //complete
         {
-            this.officesTableAdapter.Fill(this.session1_xxDataSet1.offices);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_amonic_airlinesDataSet.offices". При необходимости она может быть перемещена или удалена.
+            this.officesTableAdapter.Fill(this._amonic_airlinesDataSet.offices);
         }
         private void saveButton_Click(object sender, EventArgs e) //complete
         {
@@ -56,7 +57,8 @@ namespace AMONIC_Airlines
                     }
                     catch (Exception)
                     {
-                        DialogResult dialog = MessageBox.Show("Something wrong! Check:\n 1) Date format must be yyyy-mm-dd\n" +
+                        DialogResult dialog = MessageBox.Show("Something wrong! Check:\n" +
+                            "1) Date format must be yyyy-mm-dd\n" +
                             "2) Date must be correct",
                             "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -65,59 +67,61 @@ namespace AMONIC_Airlines
             }
             if (emailBox.Text != "")
             {
-                string connStr = "server=localhost;user=root;database=session1_xx;" +
+                string connection_to_server = "server=localhost;user=root;database=amonic-airlines;" +
                     "password=As89149625780@;";
-                MySqlConnection conn = new MySqlConnection(connStr);
-                conn.Open();
-                string sqlr = "select Email from users where Email = '" + emailBox.Text + "'";
-                MySqlCommand cmnd = new MySqlCommand(sqlr, conn);
-                MySqlDataReader rds = cmnd.ExecuteReader();
-                while (rds.Read())
+                MySqlConnection connection_to_database = new MySqlConnection(connection_to_server);
+                connection_to_database.Open();
+                string sqlOne = "select Email from users where Email = '" + emailBox.Text + "'";
+                MySqlCommand commandOne = new MySqlCommand(sqlOne, connection_to_database);
+                MySqlDataReader readerOne = commandOne.ExecuteReader();
+                while (readerOne.Read())
                 {
-                    if (rds[0].ToString() == emailBox.Text)
+                    if (readerOne[0].ToString() == emailBox.Text)
                     {
                         DialogResult dialog = MessageBox.Show("This email is already exist",
                             "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         emailBox.Text = "";
                     }
                 }
-                rds.Close();
-                conn.Close();
+                readerOne.Close();
+                connection_to_database.Close();
                 return;
             }
             else
             {
-                string connection = "server=localhost;user=root;database=session1_xx;" +
+                string connection_to_server = "server=localhost;user=root;database=amonic-airlines;" +
                 "password=As89149625780@;";
-                MySqlConnection db = new MySqlConnection(connection);
-                db.Open();
-                string sq = "SELECT COUNT(ID) FROM users";
-                MySqlCommand commands = new MySqlCommand(sq, db);
-                MySqlDataReader reader = commands.ExecuteReader();
-                reader.Read();
-                string id = reader[0].ToString();
-                db.Close();
+                MySqlConnection connection_to_database = new MySqlConnection(connection_to_server);
+                connection_to_database.Open();
+                string sqlOne = "SELECT COUNT(ID) FROM users";
+                MySqlCommand commandOne = new MySqlCommand(sqlOne, connection_to_database);
+                MySqlDataReader readerOne = commandOne.ExecuteReader();
+                readerOne.Read();
+                string id = readerOne[0].ToString();
+                connection_to_database.Close();
                 string email = emailBox.Text;
-                string fname = firstNameBox.Text;
-                string lname = lastNameBox.Text;
+                string firstName = firstNameBox.Text;
+                string lastName = lastNameBox.Text;
                 string office = officeBox.Text;
-                string bdate = birthdateBox.Text;
-                string word = passwordBox.Text;
-                db.Open();
-                string sql = "SELECT ID from offices WHERE Title = '" + office + "'";
-                MySqlCommand command = new MySqlCommand(sql, db);
-                MySqlDataReader readers = command.ExecuteReader();
-                readers.Read();
-                office = readers[0].ToString();
-                db.Close();
-                string query = "INSERT INTO users (ID, RoleID, Email, Password, FirstName," +
+                string birthdate = birthdateBox.Text;
+                string password = passwordBox.Text;
+                readerOne.Close();
+                connection_to_database.Open();
+                string sqlTwo = "SELECT ID from offices WHERE Title = '" + office + "'";
+                MySqlCommand commandTwo = new MySqlCommand(sqlTwo, connection_to_database);
+                MySqlDataReader readerTwo = commandTwo.ExecuteReader();
+                readerTwo.Read();
+                office = readerTwo[0].ToString();
+                readerTwo.Close();
+                connection_to_database.Close();
+                string queryOne = "INSERT INTO users (ID, RoleID, Email, Password, FirstName," +
                     "LastName, OfficeID, Birthdate, Active) VALUES (" +
-                    id + ", " + 2 + ", '" + email + "', " + "MD5('" + word + "'), '" + fname +
-                    "', '" + lname + "', " +
-                     office + ", '" + bdate + "', " + 1 + ")";
-                MySqlCommand command1 = new MySqlCommand(query, db);
-                command1.ExecuteNonQuery();
-                db.Close();
+                    id + ", " + 2 + ", '" + email + "', " + "MD5('" + password + "'), '" + firstName +
+                    "', '" + lastName + "', " +
+                     office + ", '" + birthdate + "', " + 1 + ")";
+                MySqlCommand commandThree = new MySqlCommand(queryOne, connection_to_database);
+                commandThree.ExecuteNonQuery();
+                connection_to_database.Close();
                 Close();
             }
         }

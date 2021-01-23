@@ -25,21 +25,21 @@ namespace AMONIC_Airlines
         private void confirmButton_Click(object sender, EventArgs e) //complete
         {
             string connection_to_server = "server=localhost;user=root;" +
-       "database=session1_xx;password=As89149625780@;";
+                "database=amonic-airlines;password=As89149625780@;";
             MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
             connection_to_datebase.Open();
             if (softwareRadioButton.Checked)
             {
-                string query = "UPDATE trecking SET Crash_report = '" +
+                string queryOne = "UPDATE trecking SET Crash_report = '" +
                     reasonBox.Text + "', Crash_type = 'software crash', Logout_date = '0001-01-01' WHERE ID = " + idUserLogout;
-                MySqlCommand commandOne = new MySqlCommand(query, connection_to_datebase);
+                MySqlCommand commandOne = new MySqlCommand(queryOne, connection_to_datebase);
                 commandOne.ExecuteNonQuery();
             }
             else if (systemRadioButton.Checked)
             {
-                string query = "UPDATE trecking SET Crash_report = '" +
+                string queryTwo = "UPDATE trecking SET Crash_report = '" +
                        reasonBox.Text + "', Crash_type = 'system crash', Logout_date = '0001-01-01' WHERE ID = " + idUserLogout;
-                MySqlCommand commandTwo = new MySqlCommand(query, connection_to_datebase);
+                MySqlCommand commandTwo = new MySqlCommand(queryTwo, connection_to_datebase);
                 commandTwo.ExecuteNonQuery();
             }
             else if (softwareRadioButton.Checked == false && systemRadioButton.Checked == false)

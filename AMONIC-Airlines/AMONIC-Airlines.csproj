@@ -124,16 +124,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="session1_xxDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>session1_xxDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_amonic_airlinesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_amonic_airlinesDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
@@ -172,16 +172,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="session1_xxDataSet1.xsc">
-      <DependentUpon>session1_xxDataSet1.xsd</DependentUpon>
+    <None Include="_amonic_airlinesDataSet.xsc">
+      <DependentUpon>_amonic_airlinesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="session1_xxDataSet1.xsd">
+    <None Include="_amonic_airlinesDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>session1_xxDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>_amonic_airlinesDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="session1_xxDataSet1.xss">
-      <DependentUpon>session1_xxDataSet1.xsd</DependentUpon>
+    <None Include="_amonic_airlinesDataSet.xss">
+      <DependentUpon>_amonic_airlinesDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

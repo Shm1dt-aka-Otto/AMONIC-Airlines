@@ -41,14 +41,14 @@
             this.lastNameBox = new System.Windows.Forms.TextBox();
             this.officeBox = new System.Windows.Forms.ComboBox();
             this.officesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.session1_xxDataSet1 = new AMONIC_Airlines.session1_xxDataSet1();
+            this._amonic_airlinesDataSet = new AMONIC_Airlines._amonic_airlinesDataSet();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.officesTableAdapter = new AMONIC_Airlines.session1_xxDataSet1TableAdapters.officesTableAdapter();
             this.birthdateBox = new System.Windows.Forms.MaskedTextBox();
+            this.officesTableAdapter = new AMONIC_Airlines._amonic_airlinesDataSetTableAdapters.officesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.session1_xxDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._amonic_airlinesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // emailLabel
@@ -135,17 +135,17 @@
             this.officeBox.Name = "officeBox";
             this.officeBox.Size = new System.Drawing.Size(186, 25);
             this.officeBox.TabIndex = 9;
-            this.officeBox.ValueMember = "ID";
+            this.officeBox.ValueMember = "Title";
             // 
             // officesBindingSource
             // 
             this.officesBindingSource.DataMember = "offices";
-            this.officesBindingSource.DataSource = this.session1_xxDataSet1;
+            this.officesBindingSource.DataSource = this._amonic_airlinesDataSet;
             // 
-            // session1_xxDataSet1
+            // _amonic_airlinesDataSet
             // 
-            this.session1_xxDataSet1.DataSetName = "session1_xxDataSet1";
-            this.session1_xxDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this._amonic_airlinesDataSet.DataSetName = "_amonic_airlinesDataSet";
+            this._amonic_airlinesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // passwordBox
             // 
@@ -176,10 +176,6 @@
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // officesTableAdapter
-            // 
-            this.officesTableAdapter.ClearBeforeFill = true;
-            // 
             // birthdateBox
             // 
             this.birthdateBox.Location = new System.Drawing.Point(133, 174);
@@ -188,6 +184,10 @@
             this.birthdateBox.Size = new System.Drawing.Size(186, 24);
             this.birthdateBox.TabIndex = 14;
             this.birthdateBox.ValidatingType = typeof(System.DateTime);
+            // 
+            // officesTableAdapter
+            // 
+            this.officesTableAdapter.ClearBeforeFill = true;
             // 
             // Add_usercs
             // 
@@ -219,7 +219,7 @@
             this.Text = "Add user";
             this.Load += new System.EventHandler(this.Add_usercs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.session1_xxDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._amonic_airlinesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,9 +240,9 @@
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
-        private session1_xxDataSet1 session1_xxDataSet1;
-        private System.Windows.Forms.BindingSource officesBindingSource;
-        private session1_xxDataSet1TableAdapters.officesTableAdapter officesTableAdapter;
         private System.Windows.Forms.MaskedTextBox birthdateBox;
+        private _amonic_airlinesDataSet _amonic_airlinesDataSet;
+        private System.Windows.Forms.BindingSource officesBindingSource;
+        private _amonic_airlinesDataSetTableAdapters.officesTableAdapter officesTableAdapter;
     }
 }
