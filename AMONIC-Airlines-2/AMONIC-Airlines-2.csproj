@@ -57,26 +57,36 @@
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aircraft.cs">
+    <Compile Include="ApplyChanges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Aircraft.Designer.cs">
-      <DependentUpon>Aircraft.cs</DependentUpon>
+    <Compile Include="ApplyChanges.Designer.cs">
+      <DependentUpon>ApplyChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageFlight.Designer.cs">
+      <DependentUpon>ManageFlight.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="session2_xxDataSet.Designer.cs">
+    <Compile Include="Schedule_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule_edit.Designer.cs">
+      <DependentUpon>Schedule_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_amonic_airlinesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>session2_xxDataSet.xsd</DependentUpon>
+      <DependentUpon>_amonic_airlinesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="session2_xxDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>session2_xxDataSet1.xsd</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Aircraft.resx">
-      <DependentUpon>Aircraft.cs</DependentUpon>
+    <EmbeddedResource Include="ApplyChanges.resx">
+      <DependentUpon>ApplyChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageFlight.resx">
+      <DependentUpon>ManageFlight.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +97,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Schedule_edit.resx">
+      <DependentUpon>Schedule_edit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,27 +109,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="session2_xxDataSet.xsc">
-      <DependentUpon>session2_xxDataSet.xsd</DependentUpon>
+    <None Include="_amonic_airlinesDataSet.xsc">
+      <DependentUpon>_amonic_airlinesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="session2_xxDataSet.xsd">
+    <None Include="_amonic_airlinesDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>session2_xxDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>_amonic_airlinesDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="session2_xxDataSet.xss">
-      <DependentUpon>session2_xxDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="session2_xxDataSet1.xsc">
-      <DependentUpon>session2_xxDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="session2_xxDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>session2_xxDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="session2_xxDataSet1.xss">
-      <DependentUpon>session2_xxDataSet1.xsd</DependentUpon>
+    <None Include="_amonic_airlinesDataSet.xss">
+      <DependentUpon>_amonic_airlinesDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
