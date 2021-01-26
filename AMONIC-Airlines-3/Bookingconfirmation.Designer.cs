@@ -29,423 +29,412 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bookingconfirmation));
-            this.outbounddetBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iatafrom = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.iatato = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cabintype = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ddmmyyyy = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.flightnumber = new System.Windows.Forms.Label();
-            this.returndetBox = new System.Windows.Forms.GroupBox();
-            this.returnnumber = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.returndate = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.returncabin = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.iatareturnto = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.iatareturnfrom = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.passengerBox = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.addpassenger = new System.Windows.Forms.Button();
-            this.firstnameText = new System.Windows.Forms.TextBox();
-            this.lastnameText = new System.Windows.Forms.TextBox();
-            this.birthdateText = new System.Windows.Forms.TextBox();
-            this.passnumText = new System.Windows.Forms.TextBox();
-            this.phoneText = new System.Windows.Forms.TextBox();
-            this.passcountryBox = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.outboundDetailBox = new System.Windows.Forms.GroupBox();
+            this.flightNumberOutbound = new System.Windows.Forms.Label();
+            this.flightNumberLabel = new System.Windows.Forms.Label();
+            this.dateOutbound = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.cabinTypeOutbound = new System.Windows.Forms.Label();
+            this.cabinTypeLabel = new System.Windows.Forms.Label();
+            this.iataOutboundTo = new System.Windows.Forms.Label();
+            this.toOutboundLabel = new System.Windows.Forms.Label();
+            this.iataOutboundFrom = new System.Windows.Forms.Label();
+            this.fromOutboundLabel = new System.Windows.Forms.Label();
+            this.returnDetailBox = new System.Windows.Forms.GroupBox();
+            this.flightNumberReturn = new System.Windows.Forms.Label();
+            this.flightNumberReturnLabel = new System.Windows.Forms.Label();
+            this.dateReturn = new System.Windows.Forms.Label();
+            this.dateReturnLabel = new System.Windows.Forms.Label();
+            this.cabinTypeReturn = new System.Windows.Forms.Label();
+            this.cabinTypeReturnLabel = new System.Windows.Forms.Label();
+            this.iataReturnTo = new System.Windows.Forms.Label();
+            this.toReturnLabel = new System.Windows.Forms.Label();
+            this.iataReturnFrom = new System.Windows.Forms.Label();
+            this.fromReturnLabel = new System.Windows.Forms.Label();
+            this.passengerDetailBox = new System.Windows.Forms.GroupBox();
+            this.passCountryBox = new System.Windows.Forms.ComboBox();
+            this.passNumText = new System.Windows.Forms.TextBox();
+            this.lastNameText = new System.Windows.Forms.TextBox();
+            this.firstNameText = new System.Windows.Forms.TextBox();
+            this.addPassengerButton = new System.Windows.Forms.Button();
+            this.phone = new System.Windows.Forms.Label();
+            this.passportCountry = new System.Windows.Forms.Label();
+            this.passportNumber = new System.Windows.Forms.Label();
+            this.birthDate = new System.Windows.Forms.Label();
+            this.lastName = new System.Windows.Forms.Label();
+            this.firstName = new System.Windows.Forms.Label();
+            this.passangerListLabel = new System.Windows.Forms.Label();
             this.passlistGridView = new System.Windows.Forms.DataGridView();
-            this.removepassenger = new System.Windows.Forms.Button();
-            this.back = new System.Windows.Forms.Button();
-            this.confirm = new System.Windows.Forms.Button();
             this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.l_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.b_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pass_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pass_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p_hone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.outbounddetBox.SuspendLayout();
-            this.returndetBox.SuspendLayout();
-            this.passengerBox.SuspendLayout();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
+            this.confirmButton = new System.Windows.Forms.Button();
+            this.birthDateText = new System.Windows.Forms.MaskedTextBox();
+            this.phoneText = new System.Windows.Forms.MaskedTextBox();
+            this.outboundDetailBox.SuspendLayout();
+            this.returnDetailBox.SuspendLayout();
+            this.passengerDetailBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passlistGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // outbounddetBox
-            // 
-            this.outbounddetBox.Controls.Add(this.flightnumber);
-            this.outbounddetBox.Controls.Add(this.label5);
-            this.outbounddetBox.Controls.Add(this.ddmmyyyy);
-            this.outbounddetBox.Controls.Add(this.label4);
-            this.outbounddetBox.Controls.Add(this.cabintype);
-            this.outbounddetBox.Controls.Add(this.label3);
-            this.outbounddetBox.Controls.Add(this.iatato);
-            this.outbounddetBox.Controls.Add(this.label2);
-            this.outbounddetBox.Controls.Add(this.iatafrom);
-            this.outbounddetBox.Controls.Add(this.label1);
-            this.outbounddetBox.Location = new System.Drawing.Point(12, 12);
-            this.outbounddetBox.Name = "outbounddetBox";
-            this.outbounddetBox.Size = new System.Drawing.Size(816, 75);
-            this.outbounddetBox.TabIndex = 0;
-            this.outbounddetBox.TabStop = false;
-            this.outbounddetBox.Text = "Outbound flight details";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "From:";
-            // 
-            // iatafrom
-            // 
-            this.iatafrom.AutoSize = true;
-            this.iatafrom.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iatafrom.Location = new System.Drawing.Point(63, 33);
-            this.iatafrom.Name = "iatafrom";
-            this.iatafrom.Size = new System.Drawing.Size(48, 17);
-            this.iatafrom.TabIndex = 1;
-            this.iatafrom.Text = "IATA";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(130, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "To:";
-            // 
-            // iatato
-            // 
-            this.iatato.AutoSize = true;
-            this.iatato.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iatato.Location = new System.Drawing.Point(154, 33);
-            this.iatato.Name = "iatato";
-            this.iatato.Size = new System.Drawing.Size(48, 17);
-            this.iatato.TabIndex = 3;
-            this.iatato.Text = "IATA";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(233, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Cabin Type:";
-            // 
-            // cabintype
-            // 
-            this.cabintype.AutoSize = true;
-            this.cabintype.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cabintype.Location = new System.Drawing.Point(319, 33);
-            this.cabintype.Name = "cabintype";
-            this.cabintype.Size = new System.Drawing.Size(95, 17);
-            this.cabintype.TabIndex = 5;
-            this.cabintype.Text = "Type Cabin";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(435, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Date:";
-            // 
-            // ddmmyyyy
-            // 
-            this.ddmmyyyy.AutoSize = true;
-            this.ddmmyyyy.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ddmmyyyy.Location = new System.Drawing.Point(478, 33);
-            this.ddmmyyyy.Name = "ddmmyyyy";
-            this.ddmmyyyy.Size = new System.Drawing.Size(95, 17);
-            this.ddmmyyyy.TabIndex = 7;
-            this.ddmmyyyy.Text = "Type Cabin";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(598, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 17);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Flight Number: ";
-            // 
-            // flightnumber
-            // 
-            this.flightnumber.AutoSize = true;
-            this.flightnumber.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.flightnumber.Location = new System.Drawing.Point(706, 33);
-            this.flightnumber.Name = "flightnumber";
-            this.flightnumber.Size = new System.Drawing.Size(69, 17);
-            this.flightnumber.TabIndex = 9;
-            this.flightnumber.Text = "Number";
-            // 
-            // returndetBox
-            // 
-            this.returndetBox.Controls.Add(this.returnnumber);
-            this.returndetBox.Controls.Add(this.label7);
-            this.returndetBox.Controls.Add(this.returndate);
-            this.returndetBox.Controls.Add(this.label9);
-            this.returndetBox.Controls.Add(this.returncabin);
-            this.returndetBox.Controls.Add(this.label11);
-            this.returndetBox.Controls.Add(this.iatareturnto);
-            this.returndetBox.Controls.Add(this.label13);
-            this.returndetBox.Controls.Add(this.iatareturnfrom);
-            this.returndetBox.Controls.Add(this.label15);
-            this.returndetBox.Location = new System.Drawing.Point(12, 93);
-            this.returndetBox.Name = "returndetBox";
-            this.returndetBox.Size = new System.Drawing.Size(816, 75);
-            this.returndetBox.TabIndex = 10;
-            this.returndetBox.TabStop = false;
-            this.returndetBox.Text = "Return flight details";
-            // 
-            // returnnumber
-            // 
-            this.returnnumber.AutoSize = true;
-            this.returnnumber.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.returnnumber.Location = new System.Drawing.Point(706, 33);
-            this.returnnumber.Name = "returnnumber";
-            this.returnnumber.Size = new System.Drawing.Size(69, 17);
-            this.returnnumber.TabIndex = 9;
-            this.returnnumber.Text = "Number";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(598, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 17);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Flight Number: ";
-            // 
-            // returndate
-            // 
-            this.returndate.AutoSize = true;
-            this.returndate.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.returndate.Location = new System.Drawing.Point(478, 33);
-            this.returndate.Name = "returndate";
-            this.returndate.Size = new System.Drawing.Size(95, 17);
-            this.returndate.TabIndex = 7;
-            this.returndate.Text = "Type Cabin";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(435, 33);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 17);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Date:";
-            // 
-            // returncabin
-            // 
-            this.returncabin.AutoSize = true;
-            this.returncabin.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.returncabin.Location = new System.Drawing.Point(319, 33);
-            this.returncabin.Name = "returncabin";
-            this.returncabin.Size = new System.Drawing.Size(95, 17);
-            this.returncabin.TabIndex = 5;
-            this.returncabin.Text = "Type Cabin";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(233, 33);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 17);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Cabin Type:";
-            // 
-            // iatareturnto
-            // 
-            this.iatareturnto.AutoSize = true;
-            this.iatareturnto.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iatareturnto.Location = new System.Drawing.Point(154, 33);
-            this.iatareturnto.Name = "iatareturnto";
-            this.iatareturnto.Size = new System.Drawing.Size(48, 17);
-            this.iatareturnto.TabIndex = 3;
-            this.iatareturnto.Text = "IATA";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(130, 33);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(30, 17);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "To:";
-            // 
-            // iatareturnfrom
-            // 
-            this.iatareturnfrom.AutoSize = true;
-            this.iatareturnfrom.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iatareturnfrom.Location = new System.Drawing.Point(63, 33);
-            this.iatareturnfrom.Name = "iatareturnfrom";
-            this.iatareturnfrom.Size = new System.Drawing.Size(48, 17);
-            this.iatareturnfrom.TabIndex = 1;
-            this.iatareturnfrom.Text = "IATA";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(16, 33);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 17);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "From:";
-            // 
-            // passengerBox
-            // 
-            this.passengerBox.Controls.Add(this.passcountryBox);
-            this.passengerBox.Controls.Add(this.phoneText);
-            this.passengerBox.Controls.Add(this.passnumText);
-            this.passengerBox.Controls.Add(this.birthdateText);
-            this.passengerBox.Controls.Add(this.lastnameText);
-            this.passengerBox.Controls.Add(this.firstnameText);
-            this.passengerBox.Controls.Add(this.addpassenger);
-            this.passengerBox.Controls.Add(this.label16);
-            this.passengerBox.Controls.Add(this.label14);
-            this.passengerBox.Controls.Add(this.label12);
-            this.passengerBox.Controls.Add(this.label10);
-            this.passengerBox.Controls.Add(this.label8);
-            this.passengerBox.Controls.Add(this.label6);
-            this.passengerBox.Location = new System.Drawing.Point(12, 174);
-            this.passengerBox.Name = "passengerBox";
-            this.passengerBox.Size = new System.Drawing.Size(816, 146);
-            this.passengerBox.TabIndex = 11;
-            this.passengerBox.TabStop = false;
-            this.passengerBox.Text = "Passenger details";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Firstname";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(294, 33);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 17);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Lastname";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(565, 33);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 17);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Birthdate";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(19, 69);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 17);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Passport number";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(294, 69);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(129, 17);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Passport country";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(565, 69);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 17);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Phone";
-            // 
-            // addpassenger
-            // 
-            this.addpassenger.Location = new System.Drawing.Point(644, 107);
-            this.addpassenger.Name = "addpassenger";
-            this.addpassenger.Size = new System.Drawing.Size(147, 25);
-            this.addpassenger.TabIndex = 6;
-            this.addpassenger.Text = "Add passenger";
-            this.addpassenger.UseVisualStyleBackColor = true;
-            // 
-            // firstnameText
-            // 
-            this.firstnameText.Location = new System.Drawing.Point(102, 30);
-            this.firstnameText.Name = "firstnameText";
-            this.firstnameText.Size = new System.Drawing.Size(186, 23);
-            this.firstnameText.TabIndex = 7;
-            // 
-            // lastnameText
-            // 
-            this.lastnameText.Location = new System.Drawing.Point(373, 30);
-            this.lastnameText.Name = "lastnameText";
-            this.lastnameText.Size = new System.Drawing.Size(177, 23);
-            this.lastnameText.TabIndex = 8;
-            // 
-            // birthdateText
-            // 
-            this.birthdateText.Location = new System.Drawing.Point(644, 30);
-            this.birthdateText.Name = "birthdateText";
-            this.birthdateText.Size = new System.Drawing.Size(149, 23);
-            this.birthdateText.TabIndex = 9;
-            // 
-            // passnumText
-            // 
-            this.passnumText.Location = new System.Drawing.Point(154, 66);
-            this.passnumText.Name = "passnumText";
-            this.passnumText.Size = new System.Drawing.Size(134, 23);
-            this.passnumText.TabIndex = 10;
-            // 
-            // phoneText
-            // 
-            this.phoneText.Location = new System.Drawing.Point(644, 66);
-            this.phoneText.Name = "phoneText";
-            this.phoneText.Size = new System.Drawing.Size(149, 23);
-            this.phoneText.TabIndex = 12;
-            // 
-            // passcountryBox
-            // 
-            this.passcountryBox.FormattingEnabled = true;
-            this.passcountryBox.Location = new System.Drawing.Point(429, 66);
-            this.passcountryBox.Name = "passcountryBox";
-            this.passcountryBox.Size = new System.Drawing.Size(121, 24);
-            this.passcountryBox.TabIndex = 13;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 334);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(105, 17);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "Passenger list";
+            // outboundDetailBox
+            // 
+            this.outboundDetailBox.Controls.Add(this.flightNumberOutbound);
+            this.outboundDetailBox.Controls.Add(this.flightNumberLabel);
+            this.outboundDetailBox.Controls.Add(this.dateOutbound);
+            this.outboundDetailBox.Controls.Add(this.dateLabel);
+            this.outboundDetailBox.Controls.Add(this.cabinTypeOutbound);
+            this.outboundDetailBox.Controls.Add(this.cabinTypeLabel);
+            this.outboundDetailBox.Controls.Add(this.iataOutboundTo);
+            this.outboundDetailBox.Controls.Add(this.toOutboundLabel);
+            this.outboundDetailBox.Controls.Add(this.iataOutboundFrom);
+            this.outboundDetailBox.Controls.Add(this.fromOutboundLabel);
+            this.outboundDetailBox.Location = new System.Drawing.Point(12, 12);
+            this.outboundDetailBox.Name = "outboundDetailBox";
+            this.outboundDetailBox.Size = new System.Drawing.Size(816, 75);
+            this.outboundDetailBox.TabIndex = 0;
+            this.outboundDetailBox.TabStop = false;
+            this.outboundDetailBox.Text = "Outbound flight details";
+            // 
+            // flightNumberOutbound
+            // 
+            this.flightNumberOutbound.AutoSize = true;
+            this.flightNumberOutbound.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.flightNumberOutbound.Location = new System.Drawing.Point(706, 33);
+            this.flightNumberOutbound.Name = "flightNumberOutbound";
+            this.flightNumberOutbound.Size = new System.Drawing.Size(69, 17);
+            this.flightNumberOutbound.TabIndex = 9;
+            this.flightNumberOutbound.Text = "Number";
+            // 
+            // flightNumberLabel
+            // 
+            this.flightNumberLabel.AutoSize = true;
+            this.flightNumberLabel.Location = new System.Drawing.Point(598, 33);
+            this.flightNumberLabel.Name = "flightNumberLabel";
+            this.flightNumberLabel.Size = new System.Drawing.Size(117, 17);
+            this.flightNumberLabel.TabIndex = 8;
+            this.flightNumberLabel.Text = "Flight Number: ";
+            // 
+            // dateOutbound
+            // 
+            this.dateOutbound.AutoSize = true;
+            this.dateOutbound.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateOutbound.Location = new System.Drawing.Point(478, 33);
+            this.dateOutbound.Name = "dateOutbound";
+            this.dateOutbound.Size = new System.Drawing.Size(92, 17);
+            this.dateOutbound.TabIndex = 7;
+            this.dateOutbound.Text = "yyyymmdd";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(435, 33);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(47, 17);
+            this.dateLabel.TabIndex = 6;
+            this.dateLabel.Text = "Date:";
+            // 
+            // cabinTypeOutbound
+            // 
+            this.cabinTypeOutbound.AutoSize = true;
+            this.cabinTypeOutbound.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cabinTypeOutbound.Location = new System.Drawing.Point(319, 33);
+            this.cabinTypeOutbound.Name = "cabinTypeOutbound";
+            this.cabinTypeOutbound.Size = new System.Drawing.Size(95, 17);
+            this.cabinTypeOutbound.TabIndex = 5;
+            this.cabinTypeOutbound.Text = "Type Cabin";
+            // 
+            // cabinTypeLabel
+            // 
+            this.cabinTypeLabel.AutoSize = true;
+            this.cabinTypeLabel.Location = new System.Drawing.Point(233, 33);
+            this.cabinTypeLabel.Name = "cabinTypeLabel";
+            this.cabinTypeLabel.Size = new System.Drawing.Size(91, 17);
+            this.cabinTypeLabel.TabIndex = 4;
+            this.cabinTypeLabel.Text = "Cabin Type:";
+            // 
+            // iataOutboundTo
+            // 
+            this.iataOutboundTo.AutoSize = true;
+            this.iataOutboundTo.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iataOutboundTo.Location = new System.Drawing.Point(154, 33);
+            this.iataOutboundTo.Name = "iataOutboundTo";
+            this.iataOutboundTo.Size = new System.Drawing.Size(48, 17);
+            this.iataOutboundTo.TabIndex = 3;
+            this.iataOutboundTo.Text = "IATA";
+            // 
+            // toOutboundLabel
+            // 
+            this.toOutboundLabel.AutoSize = true;
+            this.toOutboundLabel.Location = new System.Drawing.Point(130, 33);
+            this.toOutboundLabel.Name = "toOutboundLabel";
+            this.toOutboundLabel.Size = new System.Drawing.Size(30, 17);
+            this.toOutboundLabel.TabIndex = 2;
+            this.toOutboundLabel.Text = "To:";
+            // 
+            // iataOutboundFrom
+            // 
+            this.iataOutboundFrom.AutoSize = true;
+            this.iataOutboundFrom.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iataOutboundFrom.Location = new System.Drawing.Point(63, 33);
+            this.iataOutboundFrom.Name = "iataOutboundFrom";
+            this.iataOutboundFrom.Size = new System.Drawing.Size(48, 17);
+            this.iataOutboundFrom.TabIndex = 1;
+            this.iataOutboundFrom.Text = "IATA";
+            // 
+            // fromOutboundLabel
+            // 
+            this.fromOutboundLabel.AutoSize = true;
+            this.fromOutboundLabel.Location = new System.Drawing.Point(16, 33);
+            this.fromOutboundLabel.Name = "fromOutboundLabel";
+            this.fromOutboundLabel.Size = new System.Drawing.Size(50, 17);
+            this.fromOutboundLabel.TabIndex = 0;
+            this.fromOutboundLabel.Text = "From:";
+            // 
+            // returnDetailBox
+            // 
+            this.returnDetailBox.Controls.Add(this.flightNumberReturn);
+            this.returnDetailBox.Controls.Add(this.flightNumberReturnLabel);
+            this.returnDetailBox.Controls.Add(this.dateReturn);
+            this.returnDetailBox.Controls.Add(this.dateReturnLabel);
+            this.returnDetailBox.Controls.Add(this.cabinTypeReturn);
+            this.returnDetailBox.Controls.Add(this.cabinTypeReturnLabel);
+            this.returnDetailBox.Controls.Add(this.iataReturnTo);
+            this.returnDetailBox.Controls.Add(this.toReturnLabel);
+            this.returnDetailBox.Controls.Add(this.iataReturnFrom);
+            this.returnDetailBox.Controls.Add(this.fromReturnLabel);
+            this.returnDetailBox.Location = new System.Drawing.Point(12, 93);
+            this.returnDetailBox.Name = "returnDetailBox";
+            this.returnDetailBox.Size = new System.Drawing.Size(816, 75);
+            this.returnDetailBox.TabIndex = 10;
+            this.returnDetailBox.TabStop = false;
+            this.returnDetailBox.Text = "Return flight details";
+            // 
+            // flightNumberReturn
+            // 
+            this.flightNumberReturn.AutoSize = true;
+            this.flightNumberReturn.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.flightNumberReturn.Location = new System.Drawing.Point(706, 33);
+            this.flightNumberReturn.Name = "flightNumberReturn";
+            this.flightNumberReturn.Size = new System.Drawing.Size(69, 17);
+            this.flightNumberReturn.TabIndex = 9;
+            this.flightNumberReturn.Text = "Number";
+            // 
+            // flightNumberReturnLabel
+            // 
+            this.flightNumberReturnLabel.AutoSize = true;
+            this.flightNumberReturnLabel.Location = new System.Drawing.Point(598, 33);
+            this.flightNumberReturnLabel.Name = "flightNumberReturnLabel";
+            this.flightNumberReturnLabel.Size = new System.Drawing.Size(117, 17);
+            this.flightNumberReturnLabel.TabIndex = 8;
+            this.flightNumberReturnLabel.Text = "Flight Number: ";
+            // 
+            // dateReturn
+            // 
+            this.dateReturn.AutoSize = true;
+            this.dateReturn.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateReturn.Location = new System.Drawing.Point(478, 33);
+            this.dateReturn.Name = "dateReturn";
+            this.dateReturn.Size = new System.Drawing.Size(92, 17);
+            this.dateReturn.TabIndex = 7;
+            this.dateReturn.Text = "yyyymmdd";
+            // 
+            // dateReturnLabel
+            // 
+            this.dateReturnLabel.AutoSize = true;
+            this.dateReturnLabel.Location = new System.Drawing.Point(435, 33);
+            this.dateReturnLabel.Name = "dateReturnLabel";
+            this.dateReturnLabel.Size = new System.Drawing.Size(47, 17);
+            this.dateReturnLabel.TabIndex = 6;
+            this.dateReturnLabel.Text = "Date:";
+            // 
+            // cabinTypeReturn
+            // 
+            this.cabinTypeReturn.AutoSize = true;
+            this.cabinTypeReturn.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cabinTypeReturn.Location = new System.Drawing.Point(319, 33);
+            this.cabinTypeReturn.Name = "cabinTypeReturn";
+            this.cabinTypeReturn.Size = new System.Drawing.Size(95, 17);
+            this.cabinTypeReturn.TabIndex = 5;
+            this.cabinTypeReturn.Text = "Type Cabin";
+            // 
+            // cabinTypeReturnLabel
+            // 
+            this.cabinTypeReturnLabel.AutoSize = true;
+            this.cabinTypeReturnLabel.Location = new System.Drawing.Point(233, 33);
+            this.cabinTypeReturnLabel.Name = "cabinTypeReturnLabel";
+            this.cabinTypeReturnLabel.Size = new System.Drawing.Size(91, 17);
+            this.cabinTypeReturnLabel.TabIndex = 4;
+            this.cabinTypeReturnLabel.Text = "Cabin Type:";
+            // 
+            // iataReturnTo
+            // 
+            this.iataReturnTo.AutoSize = true;
+            this.iataReturnTo.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iataReturnTo.Location = new System.Drawing.Point(154, 33);
+            this.iataReturnTo.Name = "iataReturnTo";
+            this.iataReturnTo.Size = new System.Drawing.Size(48, 17);
+            this.iataReturnTo.TabIndex = 3;
+            this.iataReturnTo.Text = "IATA";
+            // 
+            // toReturnLabel
+            // 
+            this.toReturnLabel.AutoSize = true;
+            this.toReturnLabel.Location = new System.Drawing.Point(130, 33);
+            this.toReturnLabel.Name = "toReturnLabel";
+            this.toReturnLabel.Size = new System.Drawing.Size(30, 17);
+            this.toReturnLabel.TabIndex = 2;
+            this.toReturnLabel.Text = "To:";
+            // 
+            // iataReturnFrom
+            // 
+            this.iataReturnFrom.AutoSize = true;
+            this.iataReturnFrom.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iataReturnFrom.Location = new System.Drawing.Point(63, 33);
+            this.iataReturnFrom.Name = "iataReturnFrom";
+            this.iataReturnFrom.Size = new System.Drawing.Size(48, 17);
+            this.iataReturnFrom.TabIndex = 1;
+            this.iataReturnFrom.Text = "IATA";
+            // 
+            // fromReturnLabel
+            // 
+            this.fromReturnLabel.AutoSize = true;
+            this.fromReturnLabel.Location = new System.Drawing.Point(16, 33);
+            this.fromReturnLabel.Name = "fromReturnLabel";
+            this.fromReturnLabel.Size = new System.Drawing.Size(50, 17);
+            this.fromReturnLabel.TabIndex = 0;
+            this.fromReturnLabel.Text = "From:";
+            // 
+            // passengerDetailBox
+            // 
+            this.passengerDetailBox.Controls.Add(this.phoneText);
+            this.passengerDetailBox.Controls.Add(this.birthDateText);
+            this.passengerDetailBox.Controls.Add(this.passCountryBox);
+            this.passengerDetailBox.Controls.Add(this.passNumText);
+            this.passengerDetailBox.Controls.Add(this.lastNameText);
+            this.passengerDetailBox.Controls.Add(this.firstNameText);
+            this.passengerDetailBox.Controls.Add(this.addPassengerButton);
+            this.passengerDetailBox.Controls.Add(this.phone);
+            this.passengerDetailBox.Controls.Add(this.passportCountry);
+            this.passengerDetailBox.Controls.Add(this.passportNumber);
+            this.passengerDetailBox.Controls.Add(this.birthDate);
+            this.passengerDetailBox.Controls.Add(this.lastName);
+            this.passengerDetailBox.Controls.Add(this.firstName);
+            this.passengerDetailBox.Location = new System.Drawing.Point(12, 174);
+            this.passengerDetailBox.Name = "passengerDetailBox";
+            this.passengerDetailBox.Size = new System.Drawing.Size(816, 146);
+            this.passengerDetailBox.TabIndex = 11;
+            this.passengerDetailBox.TabStop = false;
+            this.passengerDetailBox.Text = "Passenger details";
+            // 
+            // passCountryBox
+            // 
+            this.passCountryBox.FormattingEnabled = true;
+            this.passCountryBox.Items.AddRange(new object[] {
+            "[ Select country ]"});
+            this.passCountryBox.Location = new System.Drawing.Point(429, 66);
+            this.passCountryBox.Name = "passCountryBox";
+            this.passCountryBox.Size = new System.Drawing.Size(121, 24);
+            this.passCountryBox.TabIndex = 13;
+            // 
+            // passNumText
+            // 
+            this.passNumText.Location = new System.Drawing.Point(154, 66);
+            this.passNumText.Name = "passNumText";
+            this.passNumText.Size = new System.Drawing.Size(134, 23);
+            this.passNumText.TabIndex = 10;
+            // 
+            // lastNameText
+            // 
+            this.lastNameText.Location = new System.Drawing.Point(373, 30);
+            this.lastNameText.Name = "lastNameText";
+            this.lastNameText.Size = new System.Drawing.Size(177, 23);
+            this.lastNameText.TabIndex = 8;
+            // 
+            // firstNameText
+            // 
+            this.firstNameText.Location = new System.Drawing.Point(102, 30);
+            this.firstNameText.Name = "firstNameText";
+            this.firstNameText.Size = new System.Drawing.Size(186, 23);
+            this.firstNameText.TabIndex = 7;
+            // 
+            // addPassengerButton
+            // 
+            this.addPassengerButton.Location = new System.Drawing.Point(644, 107);
+            this.addPassengerButton.Name = "addPassengerButton";
+            this.addPassengerButton.Size = new System.Drawing.Size(147, 25);
+            this.addPassengerButton.TabIndex = 6;
+            this.addPassengerButton.Text = "Add passenger";
+            this.addPassengerButton.UseVisualStyleBackColor = true;
+            this.addPassengerButton.Click += new System.EventHandler(this.addPassengerButton_Click);
+            // 
+            // phone
+            // 
+            this.phone.AutoSize = true;
+            this.phone.Location = new System.Drawing.Point(565, 69);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(51, 17);
+            this.phone.TabIndex = 5;
+            this.phone.Text = "Phone";
+            // 
+            // passportCountry
+            // 
+            this.passportCountry.AutoSize = true;
+            this.passportCountry.Location = new System.Drawing.Point(294, 69);
+            this.passportCountry.Name = "passportCountry";
+            this.passportCountry.Size = new System.Drawing.Size(129, 17);
+            this.passportCountry.TabIndex = 4;
+            this.passportCountry.Text = "Passport country";
+            // 
+            // passportNumber
+            // 
+            this.passportNumber.AutoSize = true;
+            this.passportNumber.Location = new System.Drawing.Point(19, 69);
+            this.passportNumber.Name = "passportNumber";
+            this.passportNumber.Size = new System.Drawing.Size(129, 17);
+            this.passportNumber.TabIndex = 3;
+            this.passportNumber.Text = "Passport number";
+            // 
+            // birthDate
+            // 
+            this.birthDate.AutoSize = true;
+            this.birthDate.Location = new System.Drawing.Point(565, 33);
+            this.birthDate.Name = "birthDate";
+            this.birthDate.Size = new System.Drawing.Size(73, 17);
+            this.birthDate.TabIndex = 2;
+            this.birthDate.Text = "Birthdate";
+            // 
+            // lastName
+            // 
+            this.lastName.AutoSize = true;
+            this.lastName.Location = new System.Drawing.Point(294, 33);
+            this.lastName.Name = "lastName";
+            this.lastName.Size = new System.Drawing.Size(76, 17);
+            this.lastName.TabIndex = 1;
+            this.lastName.Text = "Lastname";
+            // 
+            // firstName
+            // 
+            this.firstName.AutoSize = true;
+            this.firstName.Location = new System.Drawing.Point(19, 33);
+            this.firstName.Name = "firstName";
+            this.firstName.Size = new System.Drawing.Size(77, 17);
+            this.firstName.TabIndex = 0;
+            this.firstName.Text = "Firstname";
+            // 
+            // passangerListLabel
+            // 
+            this.passangerListLabel.AutoSize = true;
+            this.passangerListLabel.Location = new System.Drawing.Point(12, 334);
+            this.passangerListLabel.Name = "passangerListLabel";
+            this.passangerListLabel.Size = new System.Drawing.Size(105, 17);
+            this.passangerListLabel.TabIndex = 12;
+            this.passangerListLabel.Text = "Passenger list";
             // 
             // passlistGridView
             // 
@@ -469,33 +458,6 @@
             this.passlistGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.passlistGridView.Size = new System.Drawing.Size(816, 150);
             this.passlistGridView.TabIndex = 13;
-            // 
-            // removepassenger
-            // 
-            this.removepassenger.Location = new System.Drawing.Point(673, 520);
-            this.removepassenger.Name = "removepassenger";
-            this.removepassenger.Size = new System.Drawing.Size(155, 25);
-            this.removepassenger.TabIndex = 14;
-            this.removepassenger.Text = "Remove passenger";
-            this.removepassenger.UseVisualStyleBackColor = true;
-            // 
-            // back
-            // 
-            this.back.Location = new System.Drawing.Point(188, 566);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(238, 25);
-            this.back.TabIndex = 15;
-            this.back.Text = "Back to search for flights";
-            this.back.UseVisualStyleBackColor = true;
-            // 
-            // confirm
-            // 
-            this.confirm.Location = new System.Drawing.Point(460, 566);
-            this.confirm.Name = "confirm";
-            this.confirm.Size = new System.Drawing.Size(153, 25);
-            this.confirm.TabIndex = 16;
-            this.confirm.Text = "Confirm booking";
-            this.confirm.UseVisualStyleBackColor = true;
             // 
             // f_name
             // 
@@ -551,19 +513,65 @@
             this.p_hone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.p_hone.Width = 135;
             // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(673, 520);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(155, 25);
+            this.removeButton.TabIndex = 14;
+            this.removeButton.Text = "Remove passenger";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(188, 566);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(238, 25);
+            this.backButton.TabIndex = 15;
+            this.backButton.Text = "Back to search for flights";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // confirmButton
+            // 
+            this.confirmButton.Location = new System.Drawing.Point(460, 566);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(153, 25);
+            this.confirmButton.TabIndex = 16;
+            this.confirmButton.Text = "Confirm booking";
+            this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
+            // 
+            // birthDateText
+            // 
+            this.birthDateText.Location = new System.Drawing.Point(644, 30);
+            this.birthDateText.Mask = "0000-00-00";
+            this.birthDateText.Name = "birthDateText";
+            this.birthDateText.Size = new System.Drawing.Size(149, 23);
+            this.birthDateText.TabIndex = 14;
+            // 
+            // phoneText
+            // 
+            this.phoneText.Location = new System.Drawing.Point(644, 66);
+            this.phoneText.Mask = "000-000-0000";
+            this.phoneText.Name = "phoneText";
+            this.phoneText.Size = new System.Drawing.Size(149, 23);
+            this.phoneText.TabIndex = 15;
+            // 
             // Bookingconfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 612);
-            this.Controls.Add(this.confirm);
-            this.Controls.Add(this.back);
-            this.Controls.Add(this.removepassenger);
+            this.Controls.Add(this.confirmButton);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.removeButton);
             this.Controls.Add(this.passlistGridView);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.passengerBox);
-            this.Controls.Add(this.returndetBox);
-            this.Controls.Add(this.outbounddetBox);
+            this.Controls.Add(this.passangerListLabel);
+            this.Controls.Add(this.passengerDetailBox);
+            this.Controls.Add(this.returnDetailBox);
+            this.Controls.Add(this.outboundDetailBox);
             this.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -572,12 +580,13 @@
             this.Name = "Bookingconfirmation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking confirmation";
-            this.outbounddetBox.ResumeLayout(false);
-            this.outbounddetBox.PerformLayout();
-            this.returndetBox.ResumeLayout(false);
-            this.returndetBox.PerformLayout();
-            this.passengerBox.ResumeLayout(false);
-            this.passengerBox.PerformLayout();
+            this.Load += new System.EventHandler(this.Bookingconfirmation_Load);
+            this.outboundDetailBox.ResumeLayout(false);
+            this.outboundDetailBox.PerformLayout();
+            this.returnDetailBox.ResumeLayout(false);
+            this.returnDetailBox.PerformLayout();
+            this.passengerDetailBox.ResumeLayout(false);
+            this.passengerDetailBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passlistGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -586,52 +595,52 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox outbounddetBox;
-        private System.Windows.Forms.Label flightnumber;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label ddmmyyyy;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label cabintype;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label iatato;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label iatafrom;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox returndetBox;
-        private System.Windows.Forms.Label returnnumber;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label returndate;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label returncabin;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label iatareturnto;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label iatareturnfrom;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.GroupBox passengerBox;
-        private System.Windows.Forms.ComboBox passcountryBox;
-        private System.Windows.Forms.TextBox phoneText;
-        private System.Windows.Forms.TextBox passnumText;
-        private System.Windows.Forms.TextBox birthdateText;
-        private System.Windows.Forms.TextBox lastnameText;
-        private System.Windows.Forms.TextBox firstnameText;
-        private System.Windows.Forms.Button addpassenger;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.GroupBox outboundDetailBox;
+        private System.Windows.Forms.Label flightNumberOutbound;
+        private System.Windows.Forms.Label flightNumberLabel;
+        private System.Windows.Forms.Label dateOutbound;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Label cabinTypeOutbound;
+        private System.Windows.Forms.Label cabinTypeLabel;
+        private System.Windows.Forms.Label iataOutboundTo;
+        private System.Windows.Forms.Label toOutboundLabel;
+        private System.Windows.Forms.Label iataOutboundFrom;
+        private System.Windows.Forms.Label fromOutboundLabel;
+        private System.Windows.Forms.GroupBox returnDetailBox;
+        private System.Windows.Forms.Label flightNumberReturn;
+        private System.Windows.Forms.Label flightNumberReturnLabel;
+        private System.Windows.Forms.Label dateReturnLabel;
+        private System.Windows.Forms.Label cabinTypeReturn;
+        private System.Windows.Forms.Label cabinTypeReturnLabel;
+        private System.Windows.Forms.Label iataReturnTo;
+        private System.Windows.Forms.Label toReturnLabel;
+        private System.Windows.Forms.Label iataReturnFrom;
+        private System.Windows.Forms.Label fromReturnLabel;
+        private System.Windows.Forms.GroupBox passengerDetailBox;
+        private System.Windows.Forms.ComboBox passCountryBox;
+        private System.Windows.Forms.TextBox passNumText;
+        private System.Windows.Forms.TextBox lastNameText;
+        private System.Windows.Forms.TextBox firstNameText;
+        private System.Windows.Forms.Button addPassengerButton;
+        private System.Windows.Forms.Label phone;
+        private System.Windows.Forms.Label passportCountry;
+        private System.Windows.Forms.Label passportNumber;
+        private System.Windows.Forms.Label birthDate;
+        private System.Windows.Forms.Label lastName;
+        private System.Windows.Forms.Label firstName;
+        private System.Windows.Forms.Label passangerListLabel;
         private System.Windows.Forms.DataGridView passlistGridView;
-        private System.Windows.Forms.Button removepassenger;
-        private System.Windows.Forms.Button back;
-        private System.Windows.Forms.Button confirm;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button confirmButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn l_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn b_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn pass_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn pass_count;
         private System.Windows.Forms.DataGridViewTextBoxColumn p_hone;
+        private System.Windows.Forms.Label dateReturn;
+        private System.Windows.Forms.MaskedTextBox phoneText;
+        private System.Windows.Forms.MaskedTextBox birthDateText;
     }
 }
