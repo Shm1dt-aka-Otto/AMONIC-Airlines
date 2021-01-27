@@ -121,11 +121,11 @@ namespace AMONIC_Airlines_2
                 string[] dateSplit = date.Split(' ');
                 string price = readerTwo[6].ToString();
                 double economPrice = Math.Round(Convert.ToDouble(price), 0);
-                double bisnessPrice = Math.Round(Convert.ToDouble(economPrice + economPrice * 0.35), 0);
-                double firstClassPrice = Math.Round(Convert.ToDouble(bisnessPrice + bisnessPrice * 0.3), 0);
+                double bisinessPrice = Math.Round(Convert.ToDouble(economPrice + economPrice * 0.35), 0);
+                double firstClassPrice = Math.Round(Convert.ToDouble(bisinessPrice + bisinessPrice * 0.3), 0);
                 manageGridView.Rows.Add(dateSplit[0], readerTwo[1].ToString(), readerTwo[2].ToString(),
                     readerTwo[3].ToString(), readerTwo[4].ToString(), readerTwo[5].ToString(),
-                    economPrice, bisnessPrice, firstClassPrice, readerTwo[7].ToString());
+                    economPrice, bisinessPrice, firstClassPrice, readerTwo[7].ToString());
             }
             readerTwo.Close();
             connection_to_database.Close();
