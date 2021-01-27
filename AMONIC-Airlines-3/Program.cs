@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AMONIC_Airlines_3
+namespace AMONIC_Airlines_2
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace AMONIC_Airlines_3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Searchflight());
+            Application.Run(new ManageFlight());
         }
     }
 }
