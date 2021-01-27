@@ -13,10 +13,12 @@ namespace AMONIC_Airlines_3
 {
     public partial class Bookingconfirmation : Form
     {
-        int checkForBlock;
+        int checkForBlock, allPrice, currentCount = 0;
+        string IdOutbound = "", IdReturn = "", userId = "1";
         public Bookingconfirmation(string fromOut, string toOut, string dateOut,
             string numberOut, string cabinType, string fromRe, string toRe,
-            string dateRe, string numberRe, int countPassanger)
+            string dateRe, string numberRe, int countPassanger, int totalAmount,
+            string outboundId, string returnId)
         {
             InitializeComponent();
             checkForBlock = countPassanger;
@@ -25,6 +27,9 @@ namespace AMONIC_Airlines_3
             cabinTypeOutbound.Text = cabinType;
             dateOutbound.Text = dateOut;
             flightNumberOutbound.Text = numberOut;
+            allPrice = totalAmount;
+            IdOutbound = outboundId;
+            IdReturn = returnId;
             if (fromRe == "")
             {
                 returnDetailBox.Visible = false;
@@ -42,9 +47,16 @@ namespace AMONIC_Airlines_3
         private void addPassengerButton_Click(object sender, EventArgs e)
         {
             if (firstNameText.Text == "" || lastNameText.Text == "" || phoneText.Text == "   -   -"
-                || passCountryBox.SelectedIndex == 0 || birthDateText.Text == "    -  -")
+                || passCountryBox.SelectedIndex == 0 || birthDateText.Text == "    -  -" ||
+                passNumText.Text == "")
             {
                 DialogResult dialog = MessageBox.Show("All fields must be filled!", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (passNumText.Text.Length > 9)
+            {
+                DialogResult dialog = MessageBox.Show("Incorrect passport number, 9 symbols available", "Warning",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -76,14 +88,27 @@ namespace AMONIC_Airlines_3
                     }
                 }
             }
+            if (phoneText.Text.Length < 12)
+            {
+                DialogResult dialog = MessageBox.Show("Incorrect phone number",
+                            "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string firstName = firstNameText.Text;
             string lastName = lastNameText.Text;
             string phoneNumber = phoneText.Text;
             string passportNumber = passNumText.Text;
             string passportCountry = passCountryBox.Text;
             string datePassanger = birthDateText.Text;
-
-
+            string[] dateSplit = datePassanger.Split('-');
+            string birthDate = dateSplit[2] + "." + dateSplit[1] + "." + dateSplit[0];
+            passlistGridView.Rows.Add(firstName, lastName, birthDate, passportNumber, 
+                passportCountry, "+8-" + phoneNumber);
+            currentCount += 1;
+            if (currentCount == checkForBlock)
+            {
+                addPassengerButton.Enabled = false;
+            }
         }
 
         private void removeButton_Click(object sender, EventArgs e)
@@ -91,6 +116,11 @@ namespace AMONIC_Airlines_3
             foreach (DataGridViewRow row in passlistGridView.SelectedRows)
             {
                 passlistGridView.Rows.RemoveAt(row.Index);
+                currentCount -= 1;
+            }
+            if (currentCount != checkForBlock)
+            {
+                addPassengerButton.Enabled = true;
             }
         }
 
@@ -101,7 +131,52 @@ namespace AMONIC_Airlines_3
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-
+            if (currentCount != checkForBlock)
+            {
+                DialogResult dialog = MessageBox.Show("Missing passanger in passanger list",
+                "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (returnDetailBox.Visible == false)
+            {
+                string[] passangerList = new string[checkForBlock];
+                int i = 0;
+                foreach (DataGridViewRow row in passlistGridView.Rows)
+                {
+                    string rowValue = row.Cells[0].Value.ToString();
+                    rowValue = row.Cells[0].Value.ToString();
+                    rowValue += "," + row.Cells[1].Value.ToString();
+                    rowValue += "," + row.Cells[3].Value.ToString();
+                    rowValue += "," + row.Cells[4].Value.ToString();
+                    string[] phone = row.Cells[5].Value.ToString().Split('-');
+                    rowValue += "," + phone[1] + "-" + phone[2] + "-" + phone[3];
+                    passangerList[i] = rowValue;
+                    i += 1;
+                }
+                ConfirmBooking confirm = new ConfirmBooking(allPrice * checkForBlock, userId,
+                    IdOutbound, cabinTypeOutbound.Text, passangerList, "");
+                confirm.ShowDialog();
+            }
+            else
+            {
+                string[] passangerList = new string[checkForBlock];
+                int i = 0;
+                foreach (DataGridViewRow row in passlistGridView.Rows)
+                {
+                    string rowValue = row.Cells[0].Value.ToString();
+                    rowValue = row.Cells[0].Value.ToString();
+                    rowValue += "," + row.Cells[1].Value.ToString();
+                    rowValue += "," + row.Cells[3].Value.ToString();
+                    rowValue += "," + row.Cells[4].Value.ToString();
+                    string[] phone = row.Cells[5].Value.ToString().Split('-');
+                    rowValue += "," + phone[1] + "-" + phone[2] + "-" + phone[3];
+                    passangerList[i] = rowValue;
+                    i += 1;
+                }
+                ConfirmBooking confirm = new ConfirmBooking(allPrice * checkForBlock, userId,
+                    IdOutbound, cabinTypeOutbound.Text, passangerList, IdReturn);
+                confirm.ShowDialog();
+            }
         }
 
         private void Bookingconfirmation_Load(object sender, EventArgs e)
