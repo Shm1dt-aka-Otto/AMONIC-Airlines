@@ -81,6 +81,7 @@ namespace AMONIC_Airlines_3
         }
         private void bookButton_Click(object sender, EventArgs e)
         {
+            totalAmount = 0;
             if (returnGridView.Visible == false)
             {
                 if (fromBox.Text == "[ All airports ]" || toBox.Text == "[ All airports ]"
@@ -107,8 +108,9 @@ namespace AMONIC_Airlines_3
                     return;
                 }
                 int passanger = Convert.ToInt32(passangerText.Text);
-                Bookingconfirmation book = new Bookingconfirmation(idUser, from, to, date, number, cabin,
-                    "", "", "", "", passanger, totalAmount, scheduleIdOutbound, "");
+                totalAmount += Convert.ToInt32(outboundGridView.Rows[selectedIndex].Cells[5].Value);
+                Bookingconfirmation book = new Bookingconfirmation(idUser, from, to, date, number, cabin, "", "",
+                    "", "", passanger, totalAmount, scheduleIdOutbound, "");
                 book.ShowDialog();
             }
             else
@@ -121,20 +123,25 @@ namespace AMONIC_Airlines_3
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                int selectedIndex = 0;
+                int returnSelInd = 0;
+                int outboundSelInd = 0;
+                foreach (DataGridViewRow row in outboundGridView.SelectedRows)
+                {
+                    outboundSelInd = row.Index;
+                }
                 foreach (DataGridViewRow row in returnGridView.SelectedRows)
                 {
-                    selectedIndex = row.Index;
+                    returnSelInd = row.Index;
                 }
-                string fromOutbound = outboundGridView.Rows[selectedIndex].Cells[0].Value.ToString();
-                string toOutbound = outboundGridView.Rows[selectedIndex].Cells[1].Value.ToString();
-                string dateOutbound = outboundGridView.Rows[selectedIndex].Cells[2].Value.ToString();
-                string numberOutbound = outboundGridView.Rows[selectedIndex].Cells[4].Value.ToString();
+                string fromOutbound = outboundGridView.Rows[outboundSelInd].Cells[0].Value.ToString();
+                string toOutbound = outboundGridView.Rows[outboundSelInd].Cells[1].Value.ToString();
+                string dateOutbound = outboundGridView.Rows[outboundSelInd].Cells[2].Value.ToString();
+                string numberOutbound = outboundGridView.Rows[outboundSelInd].Cells[4].Value.ToString();
                 string cabin = cabinBox.Text;
-                string fromReturn = returnGridView.Rows[selectedIndex].Cells[0].Value.ToString();
-                string toReturn = returnGridView.Rows[selectedIndex].Cells[1].Value.ToString();
-                string dateReturn = returnGridView.Rows[selectedIndex].Cells[2].Value.ToString();
-                string numberReturn = returnGridView.Rows[selectedIndex].Cells[4].Value.ToString();
+                string fromReturn = returnGridView.Rows[returnSelInd].Cells[0].Value.ToString();
+                string toReturn = returnGridView.Rows[returnSelInd].Cells[1].Value.ToString();
+                string dateReturn = returnGridView.Rows[returnSelInd].Cells[2].Value.ToString();
+                string numberReturn = returnGridView.Rows[returnSelInd].Cells[4].Value.ToString();
                 if (passangerText.Text == "")
                 {
                     DialogResult dialog = MessageBox.Show("Add number of passanger", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -142,6 +149,8 @@ namespace AMONIC_Airlines_3
                     return;
                 }
                 int passanger = Convert.ToInt32(passangerText.Text);
+                totalAmount += Convert.ToInt32(outboundGridView.Rows[returnSelInd].Cells[5].Value);
+                totalAmount += Convert.ToInt32(returnGridView.Rows[returnSelInd].Cells[5].Value);
                 Bookingconfirmation book = new Bookingconfirmation(idUser, fromOutbound, toOutbound, dateOutbound,
                     numberOutbound, cabin, fromReturn, toReturn, dateReturn, numberReturn, passanger
                     , totalAmount, scheduleIdOutbound, scheduleIdReturn);
@@ -152,7 +161,6 @@ namespace AMONIC_Airlines_3
         {
             if (returnButton.Checked)
             {
-                totalAmount = 0;
                 outboundGridView.Rows.Clear();
                 returnGridView.Rows.Clear();
                 if (returnText.Text == "" || fromBox.Text == "[ All airports ]" ||
@@ -282,19 +290,16 @@ namespace AMONIC_Airlines_3
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerTwo.Close();
@@ -320,19 +325,16 @@ namespace AMONIC_Airlines_3
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerThree.Close();
@@ -384,19 +386,16 @@ namespace AMONIC_Airlines_3
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerTwo.Close();
@@ -421,19 +420,16 @@ namespace AMONIC_Airlines_3
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerThree.Close();
@@ -485,19 +481,16 @@ namespace AMONIC_Airlines_3
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerTwo.Close();
@@ -523,19 +516,16 @@ namespace AMONIC_Airlines_3
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerThree.Close();
@@ -573,19 +563,16 @@ namespace AMONIC_Airlines_3
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerTwo.Close();
@@ -610,19 +597,16 @@ namespace AMONIC_Airlines_3
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 returnGridView.Rows.Add(readerThree[0].ToString(), readerThree[1].ToString(), dateSplit[0],
                                     readerThree[3].ToString(), readerThree[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerThree.Close();
@@ -633,7 +617,6 @@ namespace AMONIC_Airlines_3
             }
             if (oneWayButton.Checked)
             {
-                totalAmount = 0;
                 outboundGridView.Rows.Clear();
                 if (fromBox.Text == "[ All airports ]" || toBox.Text == "[ All airports ]"
                     || outboundText.Text == "    -  -")
@@ -716,19 +699,16 @@ namespace AMONIC_Airlines_3
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerTwo.Close();
@@ -764,19 +744,16 @@ namespace AMONIC_Airlines_3
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), economyPrice, 0);
-                                totalAmount += Convert.ToInt32(economyPrice);
                             }
                             else if (cabinBox.Text == "Business")
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), bisinessPrice, 0);
-                                totalAmount += Convert.ToInt32(bisinessPrice);
                             }
                             else
                             {
                                 outboundGridView.Rows.Add(readerTwo[0].ToString(), readerTwo[1].ToString(), dateSplit[0],
                                     readerTwo[3].ToString(), readerTwo[4].ToString(), firstClassPrice, 0);
-                                totalAmount += Convert.ToInt32(firstClassPrice);
                             }
                         }
                         readerTwo.Close();

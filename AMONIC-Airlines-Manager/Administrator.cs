@@ -1,5 +1,6 @@
 ﻿using AMONIC_Airlines_2;
 using AMONIC_Airlines_3;
+using AMONIC_Airlines_4;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -203,24 +204,22 @@ namespace AMONIC_Airlines
             manage.ShowDialog();
         }
 
-        private void bookingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addSurveyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string connection_to_server = "server=localhost;user=root;database=amonic-airlines;" +
-                "password=As89149625780@;";
-            MySqlConnection connection_to_datebase = new MySqlConnection(connection_to_server);
-            connection_to_datebase.Open();
-            string sqlFour = "SELECT ID from users where Email = '" + emailAdministrator + "'";
-            MySqlCommand commandThree = new MySqlCommand(sqlFour, connection_to_datebase);
-            MySqlDataReader readerTwo = commandThree.ExecuteReader();
-            string idUser = "";
-            if (readerTwo.Read())
-            {
-                idUser = readerTwo[0].ToString();
-            }
-            readerTwo.Close();
-            connection_to_datebase.Close();
-            SearchFlight search = new SearchFlight(idUser);
-            search.ShowDialog();
+            AddSurvey survey = new AddSurvey();
+            survey.ShowDialog();
+        }
+
+        private void summaryResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResultSummary result = new ResultSummary();
+            result.ShowDialog();
+        }
+
+        private void detailResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DetailResult detail = new DetailResult();
+            detail.ShowDialog();
         }
 
         private void Administrator_FormClosing(object sender, FormClosingEventArgs e) //complete

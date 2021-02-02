@@ -92,6 +92,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSurvey.Designer.cs">
+      <DependentUpon>AddSurvey.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,12 @@
     <Compile Include="ConfirmBooking.Designer.cs">
       <DependentUpon>ConfirmBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailResult.Designer.cs">
+      <DependentUpon>DetailResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultSummary.Designer.cs">
+      <DependentUpon>ResultSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Schedule_edit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +189,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_amonic_airlinesDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddSurvey.resx">
+      <DependentUpon>AddSurvey.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmBooking.resx">
       <DependentUpon>ConfirmBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailResult.resx">
+      <DependentUpon>DetailResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditRole.resx">
       <DependentUpon>EditRole.cs</DependentUpon>
@@ -207,6 +231,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ResultSummary.resx">
+      <DependentUpon>ResultSummary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Schedule_edit.resx">
       <DependentUpon>Schedule_edit.cs</DependentUpon>
     </EmbeddedResource>
