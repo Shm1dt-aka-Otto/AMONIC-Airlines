@@ -1,11 +1,13 @@
 ﻿using AMONIC_Airlines_2;
 using AMONIC_Airlines_3;
 using AMONIC_Airlines_4;
+using AMONIC_Airlines_5;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -220,6 +222,18 @@ namespace AMONIC_Airlines
         {
             DetailResult detail = new DetailResult();
             detail.ShowDialog();
+        }
+
+        private void amenitiesResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmenitiesSurvey amenities = new AmenitiesSurvey();
+            amenities.ShowDialog();
+        }
+
+        private void shortResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShortSummary shortsummary = new ShortSummary();
+            shortsummary.ShowDialog();
         }
 
         private void Administrator_FormClosing(object sender, FormClosingEventArgs e) //complete

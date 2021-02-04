@@ -34,16 +34,18 @@
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageFlightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addSurveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.summaryResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.amenitiesResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.officeLabel = new System.Windows.Forms.Label();
             this.officeBox = new System.Windows.Forms.ComboBox();
             this.administratorGridView = new System.Windows.Forms.DataGridView();
             this.changeRoleButton = new System.Windows.Forms.Button();
             this.enableDisableButton = new System.Windows.Forms.Button();
-            this.surveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addSurveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.summaryResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detailResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shortResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.administratorGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
@@ -60,14 +62,14 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(691, 30);
+            this.menuStrip.Size = new System.Drawing.Size(691, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.addUserToolStripMenuItem.Text = "Add user";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
@@ -75,16 +77,56 @@
             // 
             this.exitToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // manageFlightsToolStripMenuItem
             // 
             this.manageFlightsToolStripMenuItem.Name = "manageFlightsToolStripMenuItem";
-            this.manageFlightsToolStripMenuItem.Size = new System.Drawing.Size(124, 26);
+            this.manageFlightsToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
             this.manageFlightsToolStripMenuItem.Text = "Manage Flights";
             this.manageFlightsToolStripMenuItem.Click += new System.EventHandler(this.manageFlightsToolStripMenuItem_Click);
+            // 
+            // surveyToolStripMenuItem
+            // 
+            this.surveyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addSurveyToolStripMenuItem,
+            this.summaryResultToolStripMenuItem,
+            this.detailResultToolStripMenuItem,
+            this.amenitiesResultToolStripMenuItem,
+            this.shortResultToolStripMenuItem});
+            this.surveyToolStripMenuItem.Name = "surveyToolStripMenuItem";
+            this.surveyToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.surveyToolStripMenuItem.Text = "Survey";
+            // 
+            // addSurveyToolStripMenuItem
+            // 
+            this.addSurveyToolStripMenuItem.Name = "addSurveyToolStripMenuItem";
+            this.addSurveyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addSurveyToolStripMenuItem.Text = "Add Survey";
+            this.addSurveyToolStripMenuItem.Click += new System.EventHandler(this.addSurveyToolStripMenuItem_Click);
+            // 
+            // summaryResultToolStripMenuItem
+            // 
+            this.summaryResultToolStripMenuItem.Name = "summaryResultToolStripMenuItem";
+            this.summaryResultToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.summaryResultToolStripMenuItem.Text = "Summary Result";
+            this.summaryResultToolStripMenuItem.Click += new System.EventHandler(this.summaryResultToolStripMenuItem_Click);
+            // 
+            // detailResultToolStripMenuItem
+            // 
+            this.detailResultToolStripMenuItem.Name = "detailResultToolStripMenuItem";
+            this.detailResultToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.detailResultToolStripMenuItem.Text = "Detail Result";
+            this.detailResultToolStripMenuItem.Click += new System.EventHandler(this.detailResultToolStripMenuItem_Click);
+            // 
+            // amenitiesResultToolStripMenuItem
+            // 
+            this.amenitiesResultToolStripMenuItem.Name = "amenitiesResultToolStripMenuItem";
+            this.amenitiesResultToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.amenitiesResultToolStripMenuItem.Text = "Amenities Result";
+            this.amenitiesResultToolStripMenuItem.Click += new System.EventHandler(this.amenitiesResultToolStripMenuItem_Click);
             // 
             // officeLabel
             // 
@@ -152,36 +194,12 @@
             this.enableDisableButton.UseVisualStyleBackColor = true;
             this.enableDisableButton.Click += new System.EventHandler(this.enableDisableButton_Click);
             // 
-            // surveyToolStripMenuItem
+            // shortResultToolStripMenuItem
             // 
-            this.surveyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addSurveyToolStripMenuItem,
-            this.summaryResultToolStripMenuItem,
-            this.detailResultToolStripMenuItem});
-            this.surveyToolStripMenuItem.Name = "surveyToolStripMenuItem";
-            this.surveyToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
-            this.surveyToolStripMenuItem.Text = "Survey";
-            // 
-            // addSurveyToolStripMenuItem
-            // 
-            this.addSurveyToolStripMenuItem.Name = "addSurveyToolStripMenuItem";
-            this.addSurveyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.addSurveyToolStripMenuItem.Text = "Add Survey";
-            this.addSurveyToolStripMenuItem.Click += new System.EventHandler(this.addSurveyToolStripMenuItem_Click);
-            // 
-            // summaryResultToolStripMenuItem
-            // 
-            this.summaryResultToolStripMenuItem.Name = "summaryResultToolStripMenuItem";
-            this.summaryResultToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.summaryResultToolStripMenuItem.Text = "Summary Result";
-            this.summaryResultToolStripMenuItem.Click += new System.EventHandler(this.summaryResultToolStripMenuItem_Click);
-            // 
-            // detailResultToolStripMenuItem
-            // 
-            this.detailResultToolStripMenuItem.Name = "detailResultToolStripMenuItem";
-            this.detailResultToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.detailResultToolStripMenuItem.Text = "Detail Result";
-            this.detailResultToolStripMenuItem.Click += new System.EventHandler(this.detailResultToolStripMenuItem_Click);
+            this.shortResultToolStripMenuItem.Name = "shortResultToolStripMenuItem";
+            this.shortResultToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.shortResultToolStripMenuItem.Text = "Short Result";
+            this.shortResultToolStripMenuItem.Click += new System.EventHandler(this.shortResultToolStripMenuItem_Click);
             // 
             // Administrator
             // 
@@ -229,5 +247,7 @@
         private System.Windows.Forms.ToolStripMenuItem addSurveyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem summaryResultToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detailResultToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem amenitiesResultToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shortResultToolStripMenuItem;
     }
 }

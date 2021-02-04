@@ -190,7 +190,6 @@
             // 
             // cancelFlightButton
             // 
-            this.cancelFlightButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelFlightButton.Image")));
             this.cancelFlightButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cancelFlightButton.Location = new System.Drawing.Point(21, 515);
             this.cancelFlightButton.Name = "cancelFlightButton";
@@ -203,7 +202,6 @@
             // 
             // editFlightButton
             // 
-            this.editFlightButton.Image = ((System.Drawing.Image)(resources.GetObject("editFlightButton.Image")));
             this.editFlightButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editFlightButton.Location = new System.Drawing.Point(175, 515);
             this.editFlightButton.Name = "editFlightButton";
@@ -216,7 +214,6 @@
             // 
             // importChangesButton
             // 
-            this.importChangesButton.Image = ((System.Drawing.Image)(resources.GetObject("importChangesButton.Image")));
             this.importChangesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.importChangesButton.Location = new System.Drawing.Point(622, 515);
             this.importChangesButton.Name = "importChangesButton";
@@ -280,7 +277,7 @@
             this.routeIDDataGridViewTextBoxColumn.Name = "routeIDDataGridViewTextBoxColumn";
             this.routeIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.routeIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.routeIDDataGridViewTextBoxColumn.Width = 70;
+            this.routeIDDataGridViewTextBoxColumn.Width = 63;
             // 
             // RouteID
             // 
@@ -289,7 +286,7 @@
             this.RouteID.Name = "RouteID";
             this.RouteID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.RouteID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.RouteID.Width = 70;
+            this.RouteID.Width = 63;
             // 
             // flightNumberDataGridViewTextBoxColumn
             // 

@@ -125,6 +125,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddSurvey";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddSurvey";
             this.Load += new System.EventHandler(this.AddSurvey_Load);
             this.ResumeLayout(false);

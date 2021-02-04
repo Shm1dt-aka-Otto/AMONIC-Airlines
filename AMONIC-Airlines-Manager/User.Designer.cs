@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageFlightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.greetingLabel = new System.Windows.Forms.Label();
             this.timespentLabel = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.Unsuccessful = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spentTimeTimer = new System.Windows.Forms.Timer(this.components);
             this.timerLabel = new System.Windows.Forms.Label();
+            this.amenititesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userGridView)).BeginInit();
             this.SuspendLayout();
@@ -55,8 +55,8 @@
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem,
-            this.manageFlightsToolStripMenuItem,
-            this.bookingToolStripMenuItem});
+            this.bookingToolStripMenuItem,
+            this.amenititesToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -71,13 +71,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // manageFlightsToolStripMenuItem
-            // 
-            this.manageFlightsToolStripMenuItem.Name = "manageFlightsToolStripMenuItem";
-            this.manageFlightsToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
-            this.manageFlightsToolStripMenuItem.Text = "Manage Flights";
-            this.manageFlightsToolStripMenuItem.Click += new System.EventHandler(this.manageFlightsToolStripMenuItem_Click);
             // 
             // bookingToolStripMenuItem
             // 
@@ -193,6 +186,13 @@
             this.timerLabel.TabIndex = 5;
             this.timerLabel.Text = "00:00:00";
             // 
+            // amenititesToolStripMenuItem
+            // 
+            this.amenititesToolStripMenuItem.Name = "amenititesToolStripMenuItem";
+            this.amenititesToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.amenititesToolStripMenuItem.Text = "Amenitites";
+            this.amenititesToolStripMenuItem.Click += new System.EventHandler(this.amenititesToolStripMenuItem_Click);
+            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -238,7 +238,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Logout_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn Time_spent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unsuccessful;
-        private System.Windows.Forms.ToolStripMenuItem manageFlightsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem amenititesToolStripMenuItem;
     }
 }

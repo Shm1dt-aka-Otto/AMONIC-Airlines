@@ -110,6 +110,18 @@
     <Compile Include="Administrator.Designer.cs">
       <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Amenities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Amenities.Designer.cs">
+      <DependentUpon>Amenities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AmenitiesSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmenitiesSurvey.Designer.cs">
+      <DependentUpon>AmenitiesSurvey.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplyChanges.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     <Compile Include="SearchFlight.Designer.cs">
       <DependentUpon>SearchFlight.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShortSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortSummary.Designer.cs">
+      <DependentUpon>ShortSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +215,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Amenities.resx">
+      <DependentUpon>Amenities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmenitiesSurvey.resx">
+      <DependentUpon>AmenitiesSurvey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplyChanges.resx">
       <DependentUpon>ApplyChanges.cs</DependentUpon>
@@ -239,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchFlight.resx">
       <DependentUpon>SearchFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortSummary.resx">
+      <DependentUpon>ShortSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>

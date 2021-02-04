@@ -35,6 +35,8 @@ namespace AMONIC_Airlines_2
                 fromBox.Items.Add(readerOne[0].ToString());
                 toBox.Items.Add(readerOne[0].ToString());
             }
+            fromBox.Items.RemoveAt(1);
+            toBox.Items.RemoveAt(1);
             readerOne.Close();
             connection_to_database.Close();
         }
@@ -134,6 +136,10 @@ namespace AMONIC_Airlines_2
         }
         private void cancelFlightButton_Click(object sender, EventArgs e) //complete
         {
+            if (buttonApplyPress == false)
+            {
+                return;
+            }
             string date = manageGridView.CurrentRow.Cells[0].Value.ToString();
             string[] dateSplit = date.Split('.');
             string dateToCancel = dateSplit[2] + "-" + dateSplit[1] + "-" + dateSplit[0];
@@ -173,6 +179,10 @@ namespace AMONIC_Airlines_2
         }
         private void editFlightButton_Click(object sender, EventArgs e) //complete
         {
+            if (buttonApplyPress == false)
+            {
+                return;
+            }
             string date = manageGridView.CurrentRow.Cells[0].Value.ToString();
             string[] dateSplit = date.Split('.');
             string dateToEdit = dateSplit[2] + "-" + dateSplit[1] + "-" + dateSplit[0];

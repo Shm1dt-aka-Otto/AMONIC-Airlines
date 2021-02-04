@@ -1,5 +1,6 @@
 ﻿using AMONIC_Airlines_2;
 using AMONIC_Airlines_3;
+using AMONIC_Airlines_5;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -65,12 +66,6 @@ namespace AMONIC_Airlines
             }
         }
 
-        private void manageFlightsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ManageFlight manage = new ManageFlight();
-            manage.ShowDialog();
-        }
-
         private void bookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string connection_to_server = "server=localhost;user=root;database=amonic-airlines;" +
@@ -89,6 +84,12 @@ namespace AMONIC_Airlines
             connection_to_datebase.Close();
             SearchFlight search = new SearchFlight(idUser);
             search.ShowDialog();
+        }
+
+        private void amenititesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Amenities amenitites = new Amenities();
+            amenitites.ShowDialog();
         }
 
         private void User_Load(object sender, EventArgs e) //complete

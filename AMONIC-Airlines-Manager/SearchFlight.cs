@@ -43,6 +43,8 @@ namespace AMONIC_Airlines_3
                 fromBox.Items.Add(readerOne[0].ToString());
                 toBox.Items.Add(readerOne[0].ToString());
             }
+            fromBox.Items.RemoveAt(1);
+            toBox.Items.RemoveAt(1);
             connection_to_database.Close();
         }
         private void fromBox_SelectedIndexChanged(object sender, EventArgs e)
