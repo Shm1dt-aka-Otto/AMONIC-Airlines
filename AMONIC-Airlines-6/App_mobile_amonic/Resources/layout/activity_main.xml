@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1">
+    <ImageView
+        android:src="@drawable/icon"
+        android:layout_width="match_parent"
+        android:layout_height="62.5dp"
+        android:id="@+id/imageView1"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:text="Search Flights"
+        android:background="@drawable/button_border_radius"
+        android:layout_width="263.5dp"
+        android:layout_height="63.5dp"
+        android:layout_marginLeft="55dp"
+        android:id="@+id/Search_flights"
+        android:layout_marginTop="80dp"/>
+    <Button
+        android:text="Reserve Seat"
+        android:background="@drawable/button_border_radius"
+        android:layout_width="263.5dp"
+        android:layout_height="63.5dp"
+        android:layout_marginLeft="55dp"
+        android:id="@+id/Reserve_Seat"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:text="Amenities"
+        android:background="@drawable/button_border_radius"
+        android:layout_width="263.5dp"
+        android:layout_height="63.5dp"
+        android:layout_marginLeft="55dp"
+        android:id="@+id/button3"
+        android:enabled="true"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:text="About our airline"
+        android:background="@drawable/button_border_radius"
+        android:layout_width="263.5dp"
+        android:layout_height="63.5dp"
+        android:layout_marginLeft="55dp"
+        android:id="@+id/About_our_airline"
+        android:layout_marginTop="20dp"
+        android:enabled="true" />
+</LinearLayout>

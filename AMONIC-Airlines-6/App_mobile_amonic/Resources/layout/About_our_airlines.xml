@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1">
+    <ImageView
+        android:src="@drawable/icon_aoa"
+        android:layout_width="384.0dp"
+        android:layout_height="62.5dp"
+        android:id="@+id/imageView1"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="0.0dp" />
+
+    <ScrollView
+        android:id="@+id/SCROLLER_ID"
+        android:layout_width="fill_parent"
+        android:layout_height="500dp"
+        android:scrollbars="vertical"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/TEXT_STATUS_ID"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="AMONIC Airlines is a new airline based in Abu Dhabi, UAE and is trying to bring a flying option to those with fun and active lifestyles, with brand new planes, attractive fares, top-notch service, and a host of fun, innovative amenities. We plan to reinvent regional air travel in our image. 
+The AMONIC Airlines mission statement is to connect people to what is important in their lives through friendly, reliable, and low-cost air travel. While keeping our status as the region’s youngest and most vibrant, AMONIC Airlines makes flying more fun. "
+            android:layout_weight="1.0"/>
+    </ScrollView>
+
+    <Button
+        android:text="Back"
+        android:background="@drawable/button_border_radius"
+        android:layout_width="263.5dp"
+        android:layout_height="63.5dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/btnBack"
+        android:layout_marginTop="20dp"
+        android:enabled="true"/>
+        
+</LinearLayout>

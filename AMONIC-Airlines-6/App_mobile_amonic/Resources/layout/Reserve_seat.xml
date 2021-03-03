@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="96.7dp"
+        android:layout_height="46.9dp"
+        android:text="Ticket number:"
+        android:gravity="center_vertical"
+        android:layout_marginRight="0.0dp" />
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="148.7dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="78.9dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dip"
+        android:text="Next"
+        android:background="@drawable/button_border_radius"
+        android:id="@+id/button2" />
+    
+
+    
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="362.5dp"
+        android:layout_height="507.3dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/relativeLayout1">
+        <ImageView
+            android:src="@drawable/firstclassseats"
+            android:layout_width="358.9dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1"
+            android:visibility="invisible" />
+        <ImageView
+            android:src="@drawable/businessclassseats"
+            android:layout_width="361.8dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:visibility="invisible" />
+
+        </RelativeLayout>
+    <Button
+        android:text="Reserve Seat"
+        android:layout_width="134.2dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:background="@drawable/button_border_radius"
+        android:layout_marginTop="608dp"
+         android:layout_marginLeft="30dp"/>
+    <Button
+        android:text="Back"
+        android:background="@drawable/button_border_radius"
+        android:layout_width="134.2dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:id="@id/btnBack"
+        android:layout_marginTop="608dp"/>
+
+
+        
+    
+    
+        
+    </RelativeLayout>
